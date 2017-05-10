@@ -8,4 +8,7 @@
 .section {
   padding: 64px 0;
   /*text-align: center;*/
+  &.inverse {
+    background-color: #f1f1f1;
+  }
 }
