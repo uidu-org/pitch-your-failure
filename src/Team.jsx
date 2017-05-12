@@ -7,11 +7,17 @@ import {
   Container,
   Row,
   Col,
+  Nav,
+  NavItem,
+  NavLink,
 } from 'reactstrap';
+import FontAwesome from 'react-fontawesome';
 
 import './App.scss';
 import andrea from './andrea.jpg';
-import venue from './003-coliseum.png';
+import ahmed from './ahmed.jpg';
+import violetta from './violetta.jpg';
+import andreag from './andreag.jpg';
 
 const Team = ({ className }) => (
   <Element name="team" className={className}>
@@ -19,9 +25,10 @@ const Team = ({ className }) => (
       <h3>Organized by</h3>
       <br />
       <br />
+      <br />
       <Row>
         <Col sm="3">
-          <img src={venue} className="img-fluid img-circle" width="50%" />
+          <img src={violetta} className="img-fluid rounded" width="50%" />
           <br />
           <br />
           <p>
@@ -29,10 +36,22 @@ const Team = ({ className }) => (
             <br />
             a freelance translator and graduate of Cultural Management from Panteion University, Greece.
           </p>
-          <a href="https://goo.gl/forms/RE52Zs89F5zj4hKO2" className="btn btn-primary btn-block">Apply now</a>
+          <Nav style={{
+            display: 'inline-flex',
+          }}>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="facebook"></FontAwesome></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="link"></FontAwesome></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+            </NavItem>
+          </Nav>
         </Col>
         <Col sm="3">
-          <img src={venue} className="img-fluid img-circle" width="50%" />
+          <img src={ahmed} className="img-fluid rounded" width="50%" />
           <br />
           <br />
           <p>
@@ -40,10 +59,22 @@ const Team = ({ className }) => (
             <br />
             a Marketing graduate from Tunis Business School in 2014.
           </p>
-          <a href="https://goo.gl/forms/RE52Zs89F5zj4hKO2" className="btn btn-primary btn-block">Apply now</a>
+          <Nav style={{
+            display: 'inline-flex',
+          }}>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="facebook"></FontAwesome></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="link"></FontAwesome></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+            </NavItem>
+          </Nav>
         </Col>
         <Col sm="3">
-          <img src={venue} className="img-fluid img-circle" width="50%" />
+          <img src={andreag} className="img-fluid rounded" width="50%" />
           <br />
           <br />
           <p>
@@ -51,10 +82,22 @@ const Team = ({ className }) => (
             <br />
             a Social Entrepreneur, an AshokaChangemakersXchange Alumni and Director of Kairos Society Italy
           </p>
-          <a href="https://goo.gl/forms/RE52Zs89F5zj4hKO2" className="btn btn-primary btn-block">Apply now</a>
+          <Nav style={{
+            display: 'inline-flex',
+          }}>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="facebook"></FontAwesome></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="link"></FontAwesome></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+            </NavItem>
+          </Nav>
         </Col>
         <Col sm="3">
-          <img alt="Andrea Vanini" src={andrea} className="img-fluid img-circle" width="50%" />
+          <img alt="Andrea Vanini" src={andrea} className="img-fluid rounded" width="50%" />
           <br />
           <br />
           <p>
@@ -62,7 +105,19 @@ const Team = ({ className }) => (
             <br />
             a freelance translator and graduate of Cultural Management from Panteion University, Greece.
           </p>
-          <a href="https://goo.gl/forms/RE52Zs89F5zj4hKO2" className="btn btn-primary btn-block">Apply now</a>
+          <Nav style={{
+            display: 'inline-flex',
+          }}>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="facebook"></FontAwesome></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="link"></FontAwesome></NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+            </NavItem>
+          </Nav>
         </Col>
       </Row>
     </Container>

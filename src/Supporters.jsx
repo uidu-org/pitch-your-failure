@@ -11,8 +11,15 @@ import {
 
 import './App.scss';
 import venue from './003-coliseum.png';
-import andrea from './andrea.jpg';
+import cmx from './cmx.png';
+import timwcap from './timwcap.jpg';
+import ashoka from './ashoka.png';
 import uidu from './uidu.png';
+
+const imgStyle = {
+  maxWidth: '100%',
+  height: 145,
+};
 
 const Supporters = ({ className }) => (
   <Element name="supporters" className={className}>
@@ -20,9 +27,12 @@ const Supporters = ({ className }) => (
       <h3 className="text-center">Supported by</h3>
       <br />
       <br />
+      <br />
       <Row>
         <Col sm="3">
-          <img src={venue} width="50%" />
+          <div className="text-center">
+            <img src={timwcap} style={imgStyle} />
+          </div>
           <br />
           <br />
           <p>
@@ -33,7 +43,9 @@ const Supporters = ({ className }) => (
           <a href="http://www.wcap.tim.it/en">http://www.wcap.tim.it/en</a>
         </Col>
         <Col sm="3">
-          <img src={venue} className="img-fluid img-circle" width="50%" />
+          <div className="text-center">
+            <img src={cmx} style={imgStyle} />
+          </div>
           <br />
           <br />
           <p>
@@ -44,7 +56,9 @@ const Supporters = ({ className }) => (
           <a href="http://changemakerxchange.com/">http://changemakerxchange.com/</a>
         </Col>
         <Col sm="3">
-          <img src={venue} className="img-fluid img-circle" width="50%" />
+          <div className="text-center">
+            <img src={ashoka} style={imgStyle} />
+          </div>
           <br />
           <br />
           <p>
@@ -55,7 +69,9 @@ const Supporters = ({ className }) => (
           <a href="https://www.ashoka.org/">https://www.ashoka.org/ </a>
         </Col>
         <Col sm="3">
-          <img alt="uidu" src={uidu} className="img-fluid img-circle" width="50%" />
+          <div className="text-center">
+            <img alt="uidu" src={uidu} style={imgStyle} />
+          </div>
           <br />
           <br />
           <p>

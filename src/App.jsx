@@ -17,6 +17,8 @@ import {
   Col,
 } from 'reactstrap';
 
+import FontAwesome from 'react-fontawesome';
+
 import './App.scss';
 import venue from './003-coliseum.png';
 import entrepreneurs from './002-startup.png';
@@ -123,7 +125,13 @@ class App extends Component {
                 <h1 className="display-1">Pitch your failure<small> in Rome</small></h1>
                 <br />
                 <p className="lead">
-                  Are you a <b>young social entrepreneur</b> from the Mediterranean region with a <b>project that failed</b> and you&apos;re <b>ready to share</b> your mistakes in public?
+                  Are you a <b>young social entrepreneur</b>
+                  {' '}
+                  from the Mediterranean region with a <b>project that failed</b>
+                  {' '}
+                  and you&apos;re <b>ready to share</b>
+                  {' '}
+                  your mistakes in public <i>and inspire other people</i>?
                 </p>
                 <p className="lead">
                   We pay you to come to Rome and tell us your story!
@@ -180,6 +188,11 @@ class App extends Component {
         <Manifest className="section inverse" />
         <Team className="section" />
         <Supporters className="section inverse" />
+        <div className="section">
+          <Container className="text-center">
+            <p>&copy; Made with <FontAwesome name="heart" /> by uidu</p>
+          </Container>
+        </div>
       </div>
     );
   }
