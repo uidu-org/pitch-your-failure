@@ -77,7 +77,7 @@ const Supporters = ({ className }) => (
           <p>
             <b>uidu</b>
             <br />
-            a freelance translator and graduate of Cultural Management from Panteion University, Greece.
+            uidu is at nonprofit’s heart. It’s a platform that enables nonprofit organizations to manage all their daily activities in one integrated product. (Fundraising, Outreach, Recruiting, Project Management, CRM)
           </p>
           <a href="https://uidu.org">https://uidu.org</a>
         </Col>

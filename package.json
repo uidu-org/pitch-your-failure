@@ -2,7 +2,7 @@
   "name": "pitch-your-failure",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://uidu-org.github.io/pitch-your-failure",
+  "homepage": "https://pitchyourfailure.org",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
     "bootstrap-loader": "^2.0.0",
