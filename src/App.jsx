@@ -28,6 +28,7 @@ import rome from './skyline.png';
 import Supporters from './Supporters';
 import Team from './Team';
 import Manifest from './Manifest';
+import Timeline from './Timeline';
 
 const OurLink = Helpers.Scroll(props =>
   <a href="#" {...props}>
@@ -63,16 +64,6 @@ class App extends Component {
                   <OurLink
                     className="nav-link"
                     offset={-64}
-                    to="manifest"
-                    smooth
-                  >
-                    Manifest
-                  </OurLink>
-                </NavItem>
-                <NavItem>
-                  <OurLink
-                    className="nav-link"
-                    offset={-64}
                     to="event"
                     smooth
                   >
@@ -103,7 +94,7 @@ class App extends Component {
                   <OurLink
                     className="nav-link"
                     offset={-64}
-                    to="apply"
+                    to="manifest"
                     smooth
                   >
                     How to apply
@@ -148,8 +139,8 @@ class App extends Component {
         <div
           className="section"
           style={{
-            backgroundColor: '#064466',
-            color: '#ffffff',
+            // backgroundColor: '#064466',
+            // color: '#ffffff',
           }}
         >
           <Element name="event">
@@ -185,12 +176,13 @@ class App extends Component {
             </Container>
           </Element>
         </div>
-        <Manifest className="section inverse" />
-        <Team className="section" />
-        <Supporters className="section inverse" />
-        <div className="section">
+        <Manifest />
+        <Timeline className="section" />
+        <Team className="section inverse" />
+        <Supporters className="section" />
+        <div className="section inverse">
           <Container className="text-center">
-            <p>&copy; Made with <FontAwesome name="heart" /> by uidu</p>
+            <p className="m-b-0">&copy; Made with <FontAwesome name="heart" /> by uidu</p>
           </Container>
         </div>
       </div>

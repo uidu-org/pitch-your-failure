@@ -34,7 +34,7 @@ const Team = ({ className }) => (
           <p>
             <b>Violetta Tsitsiliani</b>
             <br />
-            a freelance translator and graduate of Cultural Management from Panteion University, Greece.
+            Founder of TheLanguageProject.eu, R. Bosch START program Alumna & cultural manager
           </p>
           <Nav style={{
             display: 'inline-flex',
@@ -57,7 +57,7 @@ const Team = ({ className }) => (
           <p>
             <b>Ahmed Hadhri</b>
             <br />
-            a Marketing graduate from Tunis Business School in 2014.
+            Founder of YallaRead.com,<br />Injaz Al Arab Alumni, Hult Prize Alumni & Enpact fellow
           </p>
           <Nav style={{
             display: 'inline-flex',
@@ -80,7 +80,7 @@ const Team = ({ className }) => (
           <p>
             <b>Andrea Giarrizzo</b>
             <br />
-            a Social Entrepreneur, an AshokaChangemakersXchange Alumni and Director of Kairos Society Italy
+            Director Kairos Society Italy, Social Entrepreneur, founder of YouTube Downloader & StartupSuperSchool.com
           </p>
           <Nav style={{
             display: 'inline-flex',
@@ -103,19 +103,19 @@ const Team = ({ className }) => (
           <p>
             <b>Andrea Vanini</b>
             <br />
-            a freelance translator and graduate of Cultural Management from Panteion University, Greece.
+            Founder of uidu.org, Changemaker and Social Entrepreneur, Councilor in an Italian municipality
           </p>
           <Nav style={{
             display: 'inline-flex',
           }}>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="facebook"></FontAwesome></NavLink>
+              <NavLink href="https://www.facebook.com/apuntovanini"><FontAwesome name="facebook"></FontAwesome></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="link"></FontAwesome></NavLink>
+              <NavLink href="https://uidu.org"><FontAwesome name="link"></FontAwesome></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+              <NavLink href="www.linkedin.com/in/andreavanini"><FontAwesome name="linkedin"></FontAwesome></NavLink>
             </NavItem>
           </Nav>
         </Col>
