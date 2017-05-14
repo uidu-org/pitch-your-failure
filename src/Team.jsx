@@ -27,7 +27,7 @@ const Team = ({ className }) => (
       <br />
       <br />
       <Row>
-        <Col sm="3">
+        <Col md="3" sm="6" xs="6">
           <img src={violetta} className="img-fluid rounded" width="50%" />
           <br />
           <br />
@@ -49,8 +49,10 @@ const Team = ({ className }) => (
               <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
             </NavItem>
           </Nav>
+          <br className="hidden-md-up" />
+          <br className="hidden-md-up" />
         </Col>
-        <Col sm="3">
+        <Col md="3" sm="6" xs="6">
           <img src={ahmed} className="img-fluid rounded" width="50%" />
           <br />
           <br />
@@ -72,8 +74,11 @@ const Team = ({ className }) => (
               <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
             </NavItem>
           </Nav>
+          <br className="hidden-md-up" />
+          <br className="hidden-md-up" />
         </Col>
-        <Col sm="3">
+        <div className="w-100 d-inline hidden-md-up"></div>
+        <Col md="3" sm="6" xs="6">
           <img src={andreag} className="img-fluid rounded" width="50%" />
           <br />
           <br />
@@ -95,8 +100,10 @@ const Team = ({ className }) => (
               <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
             </NavItem>
           </Nav>
+          <br className="hidden-md-up" />
+          <br className="hidden-md-up" />
         </Col>
-        <Col sm="3">
+        <Col md="3" sm="6" xs="6">
           <img alt="Andrea Vanini" src={andrea} className="img-fluid rounded" width="50%" />
           <br />
           <br />
@@ -118,6 +125,8 @@ const Team = ({ className }) => (
               <NavLink href="www.linkedin.com/in/andreavanini"><FontAwesome name="linkedin"></FontAwesome></NavLink>
             </NavItem>
           </Nav>
+          <br className="hidden-md-up" />
+          <br className="hidden-md-up" />
         </Col>
       </Row>
     </Container>

@@ -29,7 +29,7 @@ const Supporters = ({ className }) => (
       <br />
       <br />
       <Row>
-        <Col sm="3">
+        <Col sm="3" xs="6">
           <div className="text-center">
             <img src={timwcap} style={imgStyle} />
           </div>
@@ -42,7 +42,7 @@ const Supporters = ({ className }) => (
           </p>
           <a href="http://www.wcap.tim.it/en">http://www.wcap.tim.it/en</a>
         </Col>
-        <Col sm="3">
+        <Col sm="3" xs="6">
           <div className="text-center">
             <img src={cmx} style={imgStyle} />
           </div>
@@ -55,7 +55,7 @@ const Supporters = ({ className }) => (
           </p>
           <a href="http://changemakerxchange.com/">http://changemakerxchange.com/</a>
         </Col>
-        <Col sm="3">
+        <Col sm="3" xs="6">
           <div className="text-center">
             <img src={ashoka} style={imgStyle} />
           </div>
@@ -68,7 +68,7 @@ const Supporters = ({ className }) => (
           </p>
           <a href="https://www.ashoka.org/">https://www.ashoka.org/ </a>
         </Col>
-        <Col sm="3">
+        <Col sm="3" xs="6">
           <div className="text-center">
             <img alt="uidu" src={uidu} style={imgStyle} />
           </div>

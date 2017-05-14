@@ -96,7 +96,7 @@
 @media screen and (max-width: 599px) {
   .timeline ol,
   .timeline ol li {
-    width: auto;
+    width: auto !important;
   }
 
   .timeline ol {
@@ -128,8 +128,8 @@
     position: static;
   }
 
-  .timeline ol li:nth-child(odd) div {
-    transform: none;
+  .timeline ol li div {
+    transform: none !important;
   }
 
   .timeline ol li:nth-child(odd) div::before,

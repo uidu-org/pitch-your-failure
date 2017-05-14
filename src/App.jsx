@@ -54,9 +54,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar toggleable>
-          <Container>
-            <NavbarToggler right onClick={this.toggle} />
+        <Container>
+          <Navbar toggleable light>
+            <NavbarToggler type="inverse" right onClick={this.toggle} />
             <NavbarBrand href="#">PitchYourFailure</NavbarBrand>
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
@@ -102,8 +102,8 @@ class App extends Component {
                 </NavItem>
               </Nav>
             </Collapse>
-          </Container>
-        </Navbar>
+          </Navbar>
+        </Container>
         <div
           style={{
             backgroundImage: `url(${rome})`,
@@ -112,7 +112,7 @@ class App extends Component {
         >
           <Container>
             <Row>
-              <Col sm="6">
+              <Col md="6">
                 <h1 className="display-1">Pitch your failure<small> in Rome</small></h1>
                 <br />
                 <p className="lead">
