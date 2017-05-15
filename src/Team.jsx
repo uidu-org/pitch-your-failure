@@ -40,13 +40,10 @@ const Team = ({ className }) => (
             display: 'inline-flex',
           }}>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="facebook"></FontAwesome></NavLink>
+              <NavLink href="http://thelanguageproject.eu"><FontAwesome name="link"></FontAwesome></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="link"></FontAwesome></NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+              <NavLink href="https://gr.linkedin.com/in/violettatsitsiliani/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
             </NavItem>
           </Nav>
           <br className="hidden-md-up" />
@@ -65,13 +62,10 @@ const Team = ({ className }) => (
             display: 'inline-flex',
           }}>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="facebook"></FontAwesome></NavLink>
+              <NavLink href="http://www.yallaread.com"><FontAwesome name="link"></FontAwesome></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="link"></FontAwesome></NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+              <NavLink href="https://www.linkedin.com/in/ahmed-hadhri-76043a77/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
             </NavItem>
           </Nav>
           <br className="hidden-md-up" />
@@ -91,13 +85,10 @@ const Team = ({ className }) => (
             display: 'inline-flex',
           }}>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="facebook"></FontAwesome></NavLink>
+              <NavLink href="http://startupsuperschool.com"><FontAwesome name="link"></FontAwesome></NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#"><FontAwesome name="link"></FontAwesome></NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="#"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+              <NavLink href="https://www.linkedin.com/in/andreagiarrizz/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
             </NavItem>
           </Nav>
           <br className="hidden-md-up" />
@@ -115,9 +106,6 @@ const Team = ({ className }) => (
           <Nav style={{
             display: 'inline-flex',
           }}>
-            <NavItem>
-              <NavLink href="https://www.facebook.com/apuntovanini"><FontAwesome name="facebook"></FontAwesome></NavLink>
-            </NavItem>
             <NavItem>
               <NavLink href="https://uidu.org"><FontAwesome name="link"></FontAwesome></NavLink>
             </NavItem>
