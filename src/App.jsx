@@ -31,6 +31,7 @@ import {
 import FontAwesome from 'react-fontawesome';
 
 import './App.scss';
+import logo from './logo.png';
 import venue from './003-coliseum.png';
 import entrepreneurs from './002-startup.png';
 import stage from './001-story.png';
@@ -114,7 +115,7 @@ class App extends Component {
           <Navbar toggleable light>
             <NavbarToggler type="inverse" right onClick={this.toggle} />
             <NavbarBrand href="#">
-              PitchYourFailure
+              <img src={logo} className="d-inline-block align-top" width={64} />
             </NavbarBrand>
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
