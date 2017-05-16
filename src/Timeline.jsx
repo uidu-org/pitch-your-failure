@@ -48,7 +48,7 @@ function Timeline({ className }) {
             <li>
               <div>
                 <time>5<sup>th</sup> October</time>
-                Pitch your Failure
+                Pitch your Failure @ TIM #Wcap Accelerator, Rome, Italy
               </div>
             </li>
           </ol>

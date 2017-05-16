@@ -11,6 +11,7 @@
     "react-addons-transition-group": "^15.5.1",
     "react-dom": "^15.5.3",
     "react-fontawesome": "^1.6.1",
+    "react-google-maps": "^6.3.0",
     "react-scroll": "^1.5.2",
     "reactstrap": "^4.5.0",
     "resolve-url-loader": "^2.0.2"
