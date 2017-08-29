@@ -9,7 +9,7 @@ import {
   Col,
 } from 'reactstrap';
 
-import rome from './rome2.jpeg';
+import rome from '../assets/images/rome2.jpeg';
 
 export default class Manifest extends Component {
   constructor(props) {
@@ -43,8 +43,8 @@ export default class Manifest extends Component {
               But, when authentic reactions and genuine experience is shared, people feel stronger.
             </p>
             <br />
-            <Row>
-              <Col sm={{ size: 4, offset: 4 }}>
+            <Row className="justify-content-center">
+              <Col sm="4">
                 <a href="https://goo.gl/forms/RE52Zs89F5zj4hKO2" className="btn btn-primary bnt-lg btn-block">Apply now and share your story</a>
               </Col>
             </Row>

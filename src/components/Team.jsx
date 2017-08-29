@@ -13,11 +13,10 @@ import {
 } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 
-import './App.scss';
-import andrea from './andrea.jpg';
-import ahmed from './ahmed.jpg';
-import violetta from './violetta.jpg';
-import andreag from './andreag.jpg';
+import andrea from '../assets/images/andrea.jpg';
+import ahmed from '../assets/images/ahmed.jpg';
+import violetta from '../assets/images/violetta.jpg';
+import andreag from '../assets/images/andreag.jpg';
 
 const Team = ({ className }) => (
   <Element name="team" className={className}>
@@ -71,7 +70,6 @@ const Team = ({ className }) => (
           <br className="hidden-md-up" />
           <br className="hidden-md-up" />
         </Col>
-        <div className="w-100 d-inline hidden-md-up"></div>
         <Col md="3" sm="6" xs="6">
           <img src={andreag} className="img-fluid rounded" width="50%" />
           <br />

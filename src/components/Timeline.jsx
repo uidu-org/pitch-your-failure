@@ -10,7 +10,6 @@ import {
 } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 
-import './App.scss';
 import './Timeline.scss';
 
 function Timeline({ className }) {
@@ -55,8 +54,8 @@ function Timeline({ className }) {
         </section>
         <br />
         <br />
-        <Row>
-          <Col sm={{ size: 4, offset: 4 }}>
+        <Row className="justify-content-center">
+          <Col sm="4">
             <a href="https://goo.gl/forms/RE52Zs89F5zj4hKO2" className="btn btn-primary bnt-lg btn-block">Apply now</a>
           </Col>
         </Row>

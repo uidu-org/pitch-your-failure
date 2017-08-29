@@ -9,12 +9,10 @@ import {
   Col,
 } from 'reactstrap';
 
-import './App.scss';
-import venue from './003-coliseum.png';
-import cmx from './cmx.png';
-import timwcap from './timwcap.jpg';
-import ashoka from './ashoka.png';
-import uidu from './uidu.png';
+import cmx from '../assets/images/cmx.png';
+import timwcap from '../assets/images/timwcap.jpg';
+import ashoka from '../assets/images/ashoka.png';
+import uidu from '../assets/images/uidu.png';
 
 const imgStyle = {
   maxWidth: '100%',
