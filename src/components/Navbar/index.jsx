@@ -51,7 +51,7 @@ export default class PYFNavbar extends Component {
               <OurLink
                 className="nav-link"
                 offset={-64}
-                to="event"
+                to="speakers"
                 smooth
               >
                 Speakers

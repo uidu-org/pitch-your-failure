@@ -4,7 +4,14 @@
   background-position: 0px 100%;
   background-repeat: no-repeat;
   padding-bottom: 200px;
+  position: relative;
 }
+
+.hero-with-video {
+  padding: 96px 0;
+  position: relative;
+}
+
 .section {
   padding: 64px 0;
   /*text-align: center;*/
@@ -38,4 +45,29 @@
     height: 100%;
     content: '';
   }
+}
+
+.drive-in.drive-in-wrap {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.drive-in-wrap {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -10000;
+}
+.drive-in-media {
+    position: absolute;
+}
+.drive-in-media video,
+.drive-in-media img {
+    transition: opacity .5s ease-in-out;
+    position: relative;
 }

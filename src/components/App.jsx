@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import ReactDriveIn from 'react-drive-in';
 import {
   Element,
   Helpers,
 } from 'react-scroll';
 
+import {
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+  OverlayView,
+} from 'react-google-maps';
 
 import {
   BrowserRouter as Router,
@@ -22,13 +29,51 @@ import {
   ModalFooter,
 } from 'reactstrap';
 
+import FontAwesome from 'react-fontawesome';
+
 import PYFNavbar from './Navbar';
 import CallForProposals from './CallForProposals';
 
 import Supporters from './Supporters';
-import Team from './Team';
+import Venue from './Venue';
+import Speakers from './Speakers';
 
-import rome from '../assets/images/skyline.png';
+const GettingStartedGoogleMap = withGoogleMap(props => (
+  <GoogleMap
+    ref={props.onMapLoad}
+    defaultZoom={12}
+    defaultCenter={{ lat: 41.882076, lng: 12.467271 }}
+    options={{
+      scrollwheel: false
+    }}
+    onClick={props.onMapClick}
+  >
+    <OverlayView
+      position={{
+        lat: 41.882076,
+        lng: 12.467271,
+      }}
+      mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
+    >
+      <div style={{
+        background: `white`,
+        border: `1px solid #ccc`,
+        padding: 15,
+      }}>
+        <h4>TIM #Wcap Accelerator</h4>
+        <p className="lead">Via Aurelio Saliceti, 10, Rome, Italy</p>
+      </div>
+    </OverlayView>
+    <Marker
+      position={{
+        lat: 41.882076,
+        lng: 12.467271,
+      }}
+      key="Taiwan"
+      defaultAnimation="2"
+    />
+  </GoogleMap>
+));
 
 const OurLink = Helpers.Scroll(props =>
   <a href="#" {...props}>
@@ -65,18 +110,24 @@ class App extends Component {
               render={() => (
                 <div>
                   <div
-                    style={{
-                      backgroundImage: `url(${rome})`,
-                    }}
-                    className="hero"
+                    // style={{
+                    //   backgroundImage: `url(${rome})`,
+                    // }}
+                    className="hero-with-video"
                   >
+                    <ReactDriveIn
+                      show="/videos/Erase-And-Rewind.mp4"
+                      poster="/videos/Erase-And-Rewind.jpg"
+                    />
                     <Container>
                       <Row>
-                        <Col md="6">
-                          <h1 className="display-1">Pitch your failure<small> in Rome</small></h1>
+                        <Col md="10">
+                          <h1 className="display-2">Pitch your failure</h1>
+                          <h2 className="display-4">
+                            <s>Perfect stories</s> True stories of failed social ventures
+                          </h2>
                           <br />
-                          <h3>5<sup>th</sup> October 2017<br />TIM #Wcap Accelerator, Italy</h3>
-                          <br />
+                          <h5>5<sup>th</sup> October 2017<br />TIM #Wcap Accelerator, Rome, Italy</h5>
                           <br />
                           <p className="lead">
                             <OurLink offset={-64} to="event" smooth>
@@ -87,7 +138,8 @@ class App extends Component {
                       </Row>
                     </Container>
                   </div>
-                  <Team className="section inverse" />
+                  <Speakers className="section" />
+                  <Venue className="section inverse" />
                   <Supporters className="section" />
                 </div>
               )}
@@ -100,6 +152,32 @@ class App extends Component {
               )}
             />
           </Switch>
+          <div style={{ height: 300 }}>
+            <GettingStartedGoogleMap
+              containerElement={
+                <div style={{ height: 300 }} />
+              }
+              mapElement={
+                <div style={{ height: 300 }} />
+              }
+              // onMapLoad={_.noop}
+              // onMapClick={_.noop}
+              // markers={markers}
+              // onMarkerRightClick={_.noop}
+            />
+          </div>
+          <div className="inverse">
+            <Container style={{ paddingTop: 32, paddingBottom: 32}}>
+              <p className="m-b-0">
+                &copy; Made with <FontAwesome name="heart" /> by uidu
+                <span className="pull-right">
+                  <a href="#">Read the full manifest</a>
+                  {' '}{' | '}{' '}
+                  <a href="mailto:pitchyourfailure@gmail.com">Contact us</a>
+                </span>
+              </p>
+            </Container>
+          </div>
           <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
             <ModalHeader toggle={this.toggleModal}>PitchYourFailure Manifest</ModalHeader>
             <ModalBody>

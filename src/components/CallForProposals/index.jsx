@@ -11,15 +11,6 @@ import {
   Col,
 } from 'reactstrap';
 
-import {
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-  OverlayView,
-} from 'react-google-maps';
-
-import FontAwesome from 'react-fontawesome';
-
 import venue from '../../assets/images/003-coliseum.png';
 import entrepreneurs from '../../assets/images/002-startup.png';
 import stage from '../../assets/images/001-story.png';
@@ -35,43 +26,6 @@ const OurLink = Helpers.Scroll(props =>
     {props.children}
   </a>,
 );
-
-const GettingStartedGoogleMap = withGoogleMap(props => (
-  <GoogleMap
-    ref={props.onMapLoad}
-    defaultZoom={12}
-    defaultCenter={{ lat: 41.882076, lng: 12.467271 }}
-    options={{
-      scrollwheel: false
-    }}
-    onClick={props.onMapClick}
-  >
-    <OverlayView
-      position={{
-        lat: 41.882076,
-        lng: 12.467271,
-      }}
-      mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-    >
-      <div style={{
-        background: `white`,
-        border: `1px solid #ccc`,
-        padding: 15,
-      }}>
-        <h4>TIM #Wcap Accelerator</h4>
-        <p className="lead">Via Aurelio Saliceti, 10, Rome, Italy</p>
-      </div>
-    </OverlayView>
-    <Marker
-      position={{
-        lat: 41.882076,
-        lng: 12.467271,
-      }}
-      key="Taiwan"
-      defaultAnimation="2"
-    />
-  </GoogleMap>
-));
 
 export default class CallForProposals extends Component {
   render() {
@@ -156,32 +110,6 @@ export default class CallForProposals extends Component {
         <Timeline className="section" />
         <Team className="section inverse" />
         <Supporters className="section" />
-        <div style={{ height: 300 }}>
-          <GettingStartedGoogleMap
-            containerElement={
-              <div style={{ height: 300 }} />
-            }
-            mapElement={
-              <div style={{ height: 300 }} />
-            }
-            // onMapLoad={_.noop}
-            // onMapClick={_.noop}
-            // markers={markers}
-            // onMarkerRightClick={_.noop}
-          />
-        </div>
-        <div className="inverse">
-          <Container style={{ paddingTop: 32, paddingBottom: 32}}>
-            <p className="m-b-0">
-              &copy; Made with <FontAwesome name="heart" /> by uidu
-              <span className="pull-right">
-                <a href="#" onClick={this.toggleModal}>Read the full manifest</a>
-                {' '}{' | '}{' '}
-                <a href="mailto:pitchyourfailure@gmail.com">Contact us</a>
-              </span>
-            </p>
-          </Container>
-        </div>
       </div>
     );
   }
