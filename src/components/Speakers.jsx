@@ -41,10 +41,13 @@ export default function Speakers({ className }) {
               display: 'inline-flex',
             }}>
               <NavItem>
-                <NavLink href="http://thelanguageproject.eu"><FontAwesome name="link"></FontAwesome></NavLink>
+                <NavLink href="http://www.marj3.com/"><FontAwesome name="link"></FontAwesome></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://gr.linkedin.com/in/violettatsitsiliani/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+                <NavLink href="www.fb.com/abdallah.samy3"><FontAwesome name="facebook"></FontAwesome></NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="www.linkedin.com/in/abdallahsamy"><FontAwesome name="linkedin"></FontAwesome></NavLink>
               </NavItem>
             </Nav>
             <br className="hidden-md-up" />
@@ -66,10 +69,13 @@ Can’t wait to share my failure story with you very soon
               display: 'inline-flex',
             }}>
               <NavItem>
-                <NavLink href="http://www.yallaread.com"><FontAwesome name="link"></FontAwesome></NavLink>
+                <NavLink href="http://misriyati.weebly.com/about-us.html"><FontAwesome name="link"></FontAwesome></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://www.linkedin.com/in/ahmed-hadhri-76043a77/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+                <NavLink href="https://www.facebook.com/nermine.mounir.9"><FontAwesome name="facebook"></FontAwesome></NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://www.linkedin.com/in/nemrine-mounir-misriyati/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
               </NavItem>
             </Nav>
             <br className="hidden-md-up" />

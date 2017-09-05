@@ -49,13 +49,13 @@ export default class Venue extends Component {
             <br />
             <Row>
               <Col sm="3">
-                <img src={gallery_rome_1} className="img-fluid rounded" />
+                <img src={gallery_rome_1} className="img-fluid rounded" alt="TIM Wcap" />
               </Col>
               <Col sm="3">
-                <img src={gallery_rome_2} className="img-fluid rounded" />
+                <img src={gallery_rome_2} className="img-fluid rounded" alt="TIM Wcap" />
               </Col>
               <Col sm="3">
-                <img src={gallery_rome_3} className="img-fluid rounded" />
+                <img src={gallery_rome_3} className="img-fluid rounded" alt="TIM Wcap" />
               </Col>
             </Row>
             <br />
