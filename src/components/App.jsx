@@ -90,7 +90,8 @@ class App extends Component {
     };
   }
 
-  toggleModal() {
+  toggleModal(e) {
+    e.preventDefault();
     this.setState({
       isModalOpen: !this.state.isModalOpen,
     });
@@ -197,7 +198,7 @@ class App extends Component {
               <p className="m-b-0">
                 &copy; Made with <FontAwesome name="heart" /> by uidu
                 <span className="pull-right">
-                  <a href="#">Read the full manifest</a>
+                  <a href="#" onClick={this.toggleModal}>Read the full manifest</a>
                   {' '}{' | '}{' '}
                   <a href="mailto:pitchyourfailure@gmail.com">Contact us</a>
                 </span>
