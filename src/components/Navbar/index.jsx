@@ -36,7 +36,7 @@ export default class PYFNavbar extends Component {
 
   render() {
     return (
-      <Navbar toggleable light>
+      <nav className="navbar navbar-expand-lg navbar-light">
         <NavbarToggler type="inverse" right onClick={this.toggle} />
         <NavbarBrand href="#">
           <img
@@ -61,20 +61,10 @@ export default class PYFNavbar extends Component {
               <OurLink
                 className="nav-link"
                 offset={-64}
-                to="event"
+                to="venue"
                 smooth
               >
-                About the event
-              </OurLink>
-            </NavItem>
-            <NavItem>
-              <OurLink
-                className="nav-link"
-                offset={-64}
-                to="team"
-                smooth
-              >
-                Team
+                Venue
               </OurLink>
             </NavItem>
             <NavItem>
@@ -88,18 +78,18 @@ export default class PYFNavbar extends Component {
               </OurLink>
             </NavItem>
             <NavItem>
-              <OurLink
+              <a
+                href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
+                rel="noopener noreferrer"
+                target="_blank"
                 className="nav-link"
-                offset={-64}
-                to="manifest"
-                smooth
               >
-                How to apply
-              </OurLink>
+                Signup for the event
+              </a>
             </NavItem>
           </Nav>
         </Collapse>
-      </Navbar>
+      </nav>
     );
   }
 }

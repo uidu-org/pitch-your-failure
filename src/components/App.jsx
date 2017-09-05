@@ -124,20 +124,46 @@ class App extends Component {
                         <Col md="10">
                           <h1 className="display-2">Pitch your failure</h1>
                           <h2 className="display-4">
-                            <s>Perfect stories</s> True stories of failed social ventures
+                            <s>Perfect stories</s> True stories<br />of <i>failed</i> social ventures
                           </h2>
                           <br />
-                          <h5>5<sup>th</sup> October 2017<br />TIM #Wcap Accelerator, Rome, Italy</h5>
+
+
+                          <h5>
+                            Thu, October 5, 2017
+                            <br />
+                            6:00 PM – 8:00 PM CEST
+                            <br />
+                            <br />
+                            TIM #Wcap Accelerator
+                            <br />
+                            Via Aurelio Saliceti, 10, 00153 Roma
+                          </h5>
                           <br />
                           <p className="lead">
-                            <OurLink offset={-64} to="event" smooth>
-                              <Button color="primary" size="lg">Learn More</Button>
-                            </OurLink>
+                            <a
+                              className="btn btn-primary btn-lg"
+                              href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
+                              rel="noopener noreferrer"
+                              target="_blank"
+                            >
+                              Signup for the event
+                            </a>
                           </p>
                         </Col>
                       </Row>
                     </Container>
                   </div>
+                  <Element name="why" className="section inverse">
+                    <Container>
+                      <h5>You are a wannabe entrepreneur but you <b>still hesitate to start the journey because of fear of failure</b>?</h5>
+                      <p className="lead">
+                        You watched the video of Jack Ma talking about how he failed 10 times to join Harvard, you heard the story of Thomas Edison who made 1,000 unsuccessful attempts at inventing the light bulb but still you think this only happens for genius people?
+                        <br />
+                        Pitch your failure night in Rome in October 5th at 6 pm will prove you wrong...
+                      </p>
+                    </Container>
+                  </Element>
                   <Speakers className="section" />
                   <Venue className="section inverse" />
                   <Supporters className="section" />

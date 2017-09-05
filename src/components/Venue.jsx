@@ -10,6 +10,9 @@ import {
 } from 'reactstrap';
 
 import rome from '../assets/images/rome.jpg';
+import gallery_rome_1 from '../assets/images/gallery_roma_1.jpg';
+import gallery_rome_2 from '../assets/images/gallery_roma_2.jpg';
+import gallery_rome_3 from '../assets/images/gallery_roma_3.jpg';
 
 export default class Venue extends Component {
   constructor(props) {
@@ -33,19 +36,39 @@ export default class Venue extends Component {
         style={{
           backgroundImage: `url(${rome})`,
         }}
-        className="manifest text-center"
+        className="manifest"
       >
         <Container>
           <div className="manifest-quote">
+            <h6>TIM #Wcap Accelerator</h6>
+            <br />
             <p className="lead quote">
-              Fear of failure is always a threat, holding down several initiatives.
-              <br />
-              But, when authentic reactions and genuine experience is shared, people feel stronger.
+              1,000 square metres in Trastevere: the Rome TIM #Wcap Accelerator is also the headquarters of Working Capital Operations.
+              Natale Nobile is Accelerator Leader here. A word from him? ‘Innovation is the mischievous spirit that opens the doors to a new world’.
             </p>
             <br />
-            <Row className="justify-content-center">
+            <Row>
+              <Col sm="3">
+                <img src={gallery_rome_1} className="img-fluid rounded" />
+              </Col>
+              <Col sm="3">
+                <img src={gallery_rome_2} className="img-fluid rounded" />
+              </Col>
+              <Col sm="3">
+                <img src={gallery_rome_3} className="img-fluid rounded" />
+              </Col>
+            </Row>
+            <br />
+            <Row className="">
               <Col sm="4">
-                <a href="https://goo.gl/forms/RE52Zs89F5zj4hKO2" className="btn btn-primary bnt-lg btn-block">Apply now and share your story</a>
+                <a
+                  className="btn btn-primary bnt-lg btn-block"
+                  href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Signup for the event
+                </a>
               </Col>
             </Row>
           </div>
