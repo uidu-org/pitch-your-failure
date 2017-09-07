@@ -161,12 +161,26 @@ class App extends Component {
                       <p className="lead">
                         You watched the video of Jack Ma talking about how he failed 10 times to join Harvard, you heard the story of Thomas Edison who made 1,000 unsuccessful attempts at inventing the light bulb but still you think this only happens for genius people?
                         <br />
-                        Pitch your failure night in Rome in October 5th at 6 pm will prove you wrong...
+                        Pitch your failure night in Rome on October 5th at 6 pm will prove you wrong.
                       </p>
                     </Container>
                   </Element>
                   <Speakers className="section" />
                   <Venue className="section inverse" />
+                  <div style={{ height: 300 }}>
+                    <GettingStartedGoogleMap
+                      containerElement={
+                        <div style={{ height: 300 }} />
+                      }
+                      mapElement={
+                        <div style={{ height: 300 }} />
+                      }
+                      // onMapLoad={_.noop}
+                      // onMapClick={_.noop}
+                      // markers={markers}
+                      // onMarkerRightClick={_.noop}
+                    />
+                  </div>
                   <Supporters className="section" />
                 </div>
               )}
@@ -179,20 +193,6 @@ class App extends Component {
               )}
             />
           </Switch>
-          <div style={{ height: 300 }}>
-            <GettingStartedGoogleMap
-              containerElement={
-                <div style={{ height: 300 }} />
-              }
-              mapElement={
-                <div style={{ height: 300 }} />
-              }
-              // onMapLoad={_.noop}
-              // onMapClick={_.noop}
-              // markers={markers}
-              // onMarkerRightClick={_.noop}
-            />
-          </div>
           <div className="inverse">
             <Container style={{ paddingTop: 32, paddingBottom: 32}}>
               <p className="m-b-0">

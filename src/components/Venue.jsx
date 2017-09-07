@@ -36,10 +36,14 @@ export default class Venue extends Component {
         style={{
           backgroundImage: `url(${rome})`,
         }}
-        className="manifest"
+        className="manifest text-center"
       >
         <Container>
           <div className="manifest-quote">
+            <h3>Venue</h3>
+            <br />
+            <br />
+            <br />
             <h6>TIM #Wcap Accelerator</h6>
             <br />
             <p className="lead quote">
@@ -47,7 +51,7 @@ export default class Venue extends Component {
               Natale Nobile is Accelerator Leader here. A word from him? ‘Innovation is the mischievous spirit that opens the doors to a new world’.
             </p>
             <br />
-            <Row>
+            <Row className="justify-content-center">
               <Col sm="3">
                 <img src={gallery_rome_1} className="img-fluid rounded" alt="TIM Wcap" />
               </Col>
@@ -59,7 +63,7 @@ export default class Venue extends Component {
               </Col>
             </Row>
             <br />
-            <Row className="">
+            <Row className="justify-content-center">
               <Col sm="4">
                 <a
                   className="btn btn-primary bnt-lg btn-block"
