@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 
 import cmx from '../assets/images/cmx.png';
-import timwcap from '../assets/images/timwcap.jpg';
+import timwcap from '../assets/images/timwcap.png';
 import ashoka from '../assets/images/ashoka.png';
 import uidu from '../assets/images/uidu.png';
 
