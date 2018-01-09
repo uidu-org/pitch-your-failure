@@ -93,7 +93,7 @@ export default class App extends Component {
                         <p className="lead mb-0">
                           <OurLink
                             className="btn btn-primary btn-lg"
-                            offset={-64}
+                            offset={0}
                             to="events"
                             smooth
                           >
