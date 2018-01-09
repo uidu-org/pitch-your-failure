@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  Element,
-} from 'react-scroll';
+import { Element } from 'react-scroll';
 
-import {
-  Container,
-  Row,
-  Col,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap';
+import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 
 import andrea from '../assets/images/andrea.jpg';
@@ -33,16 +24,23 @@ const Team = ({ className }) => (
           <p>
             <b>Violetta Tsitsiliani</b>
             <br />
-            Founder of TheLanguageProject.eu, R. Bosch START program Alumna & cultural manager
+            Founder of TheLanguageProject.eu, R. Bosch START program Alumna &
+            cultural manager
           </p>
-          <Nav style={{
-            display: 'inline-flex',
-          }}>
+          <Nav
+            style={{
+              display: 'inline-flex',
+            }}
+          >
             <NavItem>
-              <NavLink href="http://thelanguageproject.eu"><FontAwesome name="link"></FontAwesome></NavLink>
+              <NavLink href="http://thelanguageproject.eu">
+                <FontAwesome name="link" />
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://gr.linkedin.com/in/violettatsitsiliani/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+              <NavLink href="https://gr.linkedin.com/in/violettatsitsiliani/">
+                <FontAwesome name="linkedin" />
+              </NavLink>
             </NavItem>
           </Nav>
           <br className="hidden-md-up" />
@@ -55,16 +53,23 @@ const Team = ({ className }) => (
           <p>
             <b>Ahmed Hadhri</b>
             <br />
-            Founder of YallaRead.com,<br />Injaz Al Arab Alumni, Hult Prize Alumni & Enpact fellow
+            Founder of YallaRead.com,<br />Injaz Al Arab Alumni, Hult Prize
+            Alumni & Enpact fellow
           </p>
-          <Nav style={{
-            display: 'inline-flex',
-          }}>
+          <Nav
+            style={{
+              display: 'inline-flex',
+            }}
+          >
             <NavItem>
-              <NavLink href="http://www.yallaread.com"><FontAwesome name="link"></FontAwesome></NavLink>
+              <NavLink href="http://www.yallaread.com">
+                <FontAwesome name="link" />
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://www.linkedin.com/in/ahmed-hadhri-76043a77/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+              <NavLink href="https://www.linkedin.com/in/ahmed-hadhri-76043a77/">
+                <FontAwesome name="linkedin" />
+              </NavLink>
             </NavItem>
           </Nav>
           <br className="hidden-md-up" />
@@ -77,38 +82,57 @@ const Team = ({ className }) => (
           <p>
             <b>Andrea Giarrizzo</b>
             <br />
-            Director Kairos Society Italy, Social Entrepreneur, founder of YouTube Downloader & StartupSuperSchool.com
+            Director Kairos Society Italy, Social Entrepreneur, founder of
+            YouTube Downloader & StartupSuperSchool.com
           </p>
-          <Nav style={{
-            display: 'inline-flex',
-          }}>
+          <Nav
+            style={{
+              display: 'inline-flex',
+            }}
+          >
             <NavItem>
-              <NavLink href="http://startupsuperschool.com"><FontAwesome name="link"></FontAwesome></NavLink>
+              <NavLink href="http://startupsuperschool.com">
+                <FontAwesome name="link" />
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://www.linkedin.com/in/andreagiarrizz/"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+              <NavLink href="https://www.linkedin.com/in/andreagiarrizz/">
+                <FontAwesome name="linkedin" />
+              </NavLink>
             </NavItem>
           </Nav>
           <br className="hidden-md-up" />
           <br className="hidden-md-up" />
         </Col>
         <Col md="3" sm="6" xs="6">
-          <img alt="Andrea Vanini" src={andrea} className="img-fluid rounded" width="50%" />
+          <img
+            alt="Andrea Vanini"
+            src={andrea}
+            className="img-fluid rounded"
+            width="50%"
+          />
           <br />
           <br />
           <p>
             <b>Andrea Vanini</b>
             <br />
-            Founder of uidu.org, Changemaker and Social Entrepreneur, Councilor in an Italian municipality
+            Founder of uidu.org, Changemaker and Social Entrepreneur, Councilor
+            in an Italian municipality
           </p>
-          <Nav style={{
-            display: 'inline-flex',
-          }}>
+          <Nav
+            style={{
+              display: 'inline-flex',
+            }}
+          >
             <NavItem>
-              <NavLink href="https://uidu.org"><FontAwesome name="link"></FontAwesome></NavLink>
+              <NavLink href="https://uidu.org">
+                <FontAwesome name="link" />
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="www.linkedin.com/in/andreavanini"><FontAwesome name="linkedin"></FontAwesome></NavLink>
+              <NavLink href="www.linkedin.com/in/andreavanini">
+                <FontAwesome name="linkedin" />
+              </NavLink>
             </NavItem>
           </Nav>
           <br className="hidden-md-up" />

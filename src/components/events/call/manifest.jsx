@@ -1,77 +1,36 @@
 import React, { Component } from 'react';
-import {
-  Element,
-} from 'react-scroll';
+import { Element } from 'react-scroll';
 
-import {
-  Container,
-  Row,
-  Col,
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
-import rome from '../assets/images/rome.jpg';
-import gallery_rome_1 from '../assets/images/gallery_roma_1.jpg';
-import gallery_rome_2 from '../assets/images/gallery_roma_2.jpg';
-import gallery_rome_3 from '../assets/images/gallery_roma_3.jpg';
-
-export default class Venue extends Component {
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      modal: false,
-    };
-  }
-
-  toggle() {
-    this.setState({
-      modal: !this.state.modal,
-    });
-  }
-
+export default class Manifest extends Component {
   render() {
+    const { call } = this.props;
     return (
       <Element
-        name="venue"
+        name="manifest"
         style={{
-          backgroundImage: `url(${rome})`,
+          backgroundImage: `url(${call.city.cover})`,
         }}
         className="manifest text-center"
       >
         <Container>
           <div className="manifest-quote">
-            <h3>Venue</h3>
-            <br />
-            <br />
-            <br />
-            <h6>TIM #Wcap Accelerator</h6>
-            <br />
             <p className="lead quote">
-              1,000 square metres in Trastevere: the Rome TIM #Wcap Accelerator is also the headquarters of Working Capital Operations.
-              Natale Nobile is Accelerator Leader here. A word from him? ‘Innovation is the mischievous spirit that opens the doors to a new world’.
+              Fear of failure is always a threat, holding down several
+              initiatives.
+              <br />
+              But, when authentic reactions and genuine experience is shared,
+              people feel stronger.
             </p>
-            <br />
-            <Row className="justify-content-center">
-              <Col sm="3">
-                <img src={gallery_rome_1} className="img-fluid rounded" alt="TIM Wcap" />
-              </Col>
-              <Col sm="3">
-                <img src={gallery_rome_2} className="img-fluid rounded" alt="TIM Wcap" />
-              </Col>
-              <Col sm="3">
-                <img src={gallery_rome_3} className="img-fluid rounded" alt="TIM Wcap" />
-              </Col>
-            </Row>
             <br />
             <Row className="justify-content-center">
               <Col sm="4">
                 <a
+                  href="https://goo.gl/forms/RE52Zs89F5zj4hKO2"
                   className="btn btn-primary bnt-lg btn-block"
-                  href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
-                  rel="noopener noreferrer"
-                  target="_blank"
                 >
-                  Signup for the event
+                  Apply now and share your story
                 </a>
               </Col>
             </Row>
@@ -86,7 +45,7 @@ export default class Venue extends Component {
 // <p>
 //   <small>or <Button size="sm" color="secondary" onClick={this.toggle}>read the full manifest</Button></small>
 //   <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-//     <ModalHeader toggle={this.toggle}>PitchYourFailure Venue</ModalHeader>
+//     <ModalHeader toggle={this.toggle}>PitchYourFailure Manifest</ModalHeader>
 //     <ModalBody>
 //       <p>“Pitch your failure” is an initiative organized by Mediterranean people for Mediterranean people, focusing on social entrepreneurship stories: Failure matters and stigmatizes us. It is in our everyday life, we experience it, but very few have the courage to talk about it and overcome it.</p>
 //       <p>“Pitch your failure” is a night where 4 social entrepreneurs will have the chance to speak about an entrepreneurial failure they had overcome. Failure will be the common ground for all speakers. Not perfect stories, but true stories.</p>

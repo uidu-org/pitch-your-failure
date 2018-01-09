@@ -1,0 +1,213 @@
+import React, { Component } from 'react';
+import { Element, ScrollLink } from 'react-scroll';
+import { Container, Row, Col, Nav, NavItem } from 'reactstrap';
+
+import Loader from '@uidu/loader';
+
+import { GettingStartedGoogleMap } from '../../utils/map';
+import { OurLink } from '../../utils/link';
+
+import Call from './call';
+import Supporters from './supporters';
+import Venue from './venue';
+import Speakers from './speakers';
+import Report from './report';
+
+export default function Event({ event, speakers, supporters, ...otherProps }) {
+  if (!event) {
+    return (
+      <div className="section inverse">
+        <Loader loaded={!!event} />
+      </div>
+    );
+  }
+  return (
+    <div>
+      <div
+        style={{
+          backgroundImage: `url(${event.cover})`,
+        }}
+        className="hero-with-bg"
+      >
+        <Element name="event-root">
+          <Container>
+            {event.status === 'finished' && (
+              <div className="alert alert-warning">
+                Event was great! Don't miss the{' '}
+                <a href="/events" className="alert-link">
+                  next ones
+                </a>!
+              </div>
+            )}
+            <h2 className="display-4">
+              <s>Perfect stories</s> True stories<br />of <i>failed</i> social
+              ventures in <i className="text-primary">{event.name}</i>
+            </h2>
+            <br />
+            <h5>
+              {event.date}
+              <br />
+              {event.time}
+              <br />
+              <br />
+              {event.venue.name}
+              <br />
+              {event.venue.address}
+            </h5>
+            <br />
+            <p className="lead mb-0">
+              {event.status === 'finished' ? (
+                <OurLink
+                  className="btn btn-primary btn-lg"
+                  offset={-64}
+                  to="photos"
+                  smooth
+                >
+                  See how it went
+                </OurLink>
+              ) : event.steps.indexOf('call') >= 0 ? (
+                <OurLink
+                  className="btn btn-primary btn-lg"
+                  offset={-64}
+                  to="application"
+                  smooth
+                >
+                  Apply now as a speaker
+                </OurLink>
+              ) : (
+                <a
+                  className="btn btn-primary btn-lg"
+                  href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Signup for the event
+                </a>
+              )}
+            </p>
+          </Container>
+        </Element>
+      </div>
+      <div className="bg-primary py-3 sticky-top">
+        <Container>
+          <Nav className="">
+            <NavItem>
+              <OurLink
+                className="nav-link disabled"
+                offset={-64}
+                to="event-root"
+                style={{ color: '#b4bec7' }}
+                smooth
+              >
+                {event.name}@{event.venue.name}
+              </OurLink>
+            </NavItem>
+            {event.steps.indexOf('call') >= 0 && (
+              <NavItem>
+                <OurLink
+                  className="nav-link text-white"
+                  offset={-64}
+                  to="application"
+                  smooth
+                >
+                  Apply now
+                </OurLink>
+              </NavItem>
+            )}
+            {event.steps.indexOf('call') >= 0 && (
+              <NavItem>
+                <OurLink
+                  className="nav-link text-white"
+                  offset={-64}
+                  to="timeline"
+                  smooth
+                >
+                  Application timeline
+                </OurLink>
+              </NavItem>
+            )}
+            {event.steps.indexOf('photos') >= 0 && (
+              <NavItem>
+                <OurLink
+                  className="nav-link text-white"
+                  offset={-64}
+                  to="photos"
+                  smooth
+                >
+                  Photos
+                </OurLink>
+              </NavItem>
+            )}
+            {event.steps.indexOf('speakers') >= 0 && (
+              <NavItem>
+                <OurLink
+                  className="nav-link text-white"
+                  offset={-64}
+                  to="speakers"
+                  smooth
+                >
+                  Speakers
+                </OurLink>
+              </NavItem>
+            )}
+            {event.steps.indexOf('venue') >= 0 && (
+              <NavItem>
+                <OurLink
+                  className="nav-link text-white"
+                  offset={-64}
+                  to="venue"
+                  smooth
+                >
+                  Venue
+                </OurLink>
+              </NavItem>
+            )}
+            <NavItem>
+              <OurLink
+                className="nav-link text-white"
+                offset={-64}
+                to="supporters"
+                smooth
+              >
+                Supporters
+              </OurLink>
+            </NavItem>
+          </Nav>
+        </Container>
+      </div>
+      {event.steps.indexOf('photos') >= 0 && (
+        <Report className="section" photos={event.photos} />
+      )}
+      {event.steps.indexOf('call') >= 0 && <Call event={event} />}
+      {event.steps.indexOf('speakers') >= 0 && (
+        <Speakers
+          className="section"
+          speakers={
+            event.speakers ? event.speakers.map(key => speakers[key]) : []
+          }
+        />
+      )}
+      {event.steps.indexOf('venue') >= 0 && (
+        <Venue className="section inverse" event={event} />
+      )}
+      {event.steps.indexOf('venue') >= 0 && (
+        <div style={{ height: 300 }}>
+          <GettingStartedGoogleMap
+            containerElement={<div style={{ height: 300 }} />}
+            mapElement={<div style={{ height: 300 }} />}
+            // onMapLoad={_.noop}
+            // onMapClick={_.noop}
+            // markers={markers}
+            // onMarkerRightClick={_.noop}
+          />
+        </div>
+      )}
+      <Supporters
+        className="section"
+        supporters={
+          event.supporters ? event.supporters.map(key => supporters[key]) : []
+        }
+      />
+    </div>
+  );
+}

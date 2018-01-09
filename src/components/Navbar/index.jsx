@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import {
-  Helpers,
-} from 'react-scroll';
+import { ScrollLink } from 'react-scroll';
 
 import {
+  Container,
   Collapse,
-  Navbar,
   NavbarToggler,
   NavbarBrand,
   Nav,
@@ -14,11 +12,11 @@ import {
 
 import logo from '../../assets/images/logo.png';
 
-const OurLink = Helpers.Scroll(props =>
+const OurLink = ScrollLink(props => (
   <a href="#" {...props}>
     {props.children}
-  </a>,
-);
+  </a>
+));
 
 export default class PYFNavbar extends Component {
   constructor(props) {
@@ -37,58 +35,44 @@ export default class PYFNavbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light">
-        <NavbarToggler type="inverse" right onClick={this.toggle} />
-        <NavbarBrand href="#">
-          <img
-            src={logo}
-            className="d-inline-block align-top"
-            width={64}
-          />
-        </NavbarBrand>
-        <Collapse isOpen={this.state.isOpen} navbar>
-          <Nav className="ml-auto" navbar>
-            <NavItem>
-              <OurLink
-                className="nav-link"
-                offset={-64}
-                to="speakers"
-                smooth
-              >
-                Speakers
-              </OurLink>
-            </NavItem>
-            <NavItem>
-              <OurLink
-                className="nav-link"
-                offset={-64}
-                to="venue"
-                smooth
-              >
-                Venue
-              </OurLink>
-            </NavItem>
-            <NavItem>
-              <OurLink
-                className="nav-link"
-                offset={-64}
-                to="supporters"
-                smooth
-              >
-                Supporters
-              </OurLink>
-            </NavItem>
-            <NavItem>
-              <a
-                href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
-                rel="noopener noreferrer"
-                target="_blank"
-                className="nav-link"
-              >
-                Signup for the event
-              </a>
-            </NavItem>
-          </Nav>
-        </Collapse>
+        <Container>
+          <NavbarToggler type="inverse" right onClick={this.toggle} />
+          <NavbarBrand href="/">
+            <img
+              src={logo}
+              className="d-inline-block align-top"
+              width={64}
+              alt="Pitch your Failure"
+            />
+          </NavbarBrand>
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <OurLink className="nav-link" offset={-64} to="events" smooth>
+                  Events
+                </OurLink>
+              </NavItem>
+              <NavItem>
+                <OurLink className="nav-link" offset={-64} to="why" smooth>
+                  Manifest
+                </OurLink>
+              </NavItem>
+              <NavItem>
+                <OurLink
+                  className="nav-link"
+                  offset={-64}
+                  to="supporters"
+                  smooth
+                >
+                  Supporters
+                </OurLink>
+              </NavItem>
+            </Nav>
+            <button className="btn btn-navbar btn-primary ml-lg-3">
+              Host an event
+            </button>
+          </Collapse>
+        </Container>
       </nav>
     );
   }

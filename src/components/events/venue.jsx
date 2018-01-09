@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-import {
-  Element,
-} from 'react-scroll';
+import { Element } from 'react-scroll';
 
-import {
-  Container,
-  Row,
-  Col,
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
-import rome from '../assets/images/rome2.jpeg';
-
-export default class Manifest extends Component {
+export default class Venue extends Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
@@ -27,25 +19,48 @@ export default class Manifest extends Component {
   }
 
   render() {
+    const { event: { venue } } = this.props;
     return (
       <Element
-        name="manifest"
+        name="venue"
         style={{
-          backgroundImage: `url(${rome})`,
+          backgroundImage: `url(${venue.cover})`,
         }}
         className="manifest text-center"
       >
         <Container>
           <div className="manifest-quote">
-            <p className="lead quote">
-              Fear of failure is always a threat, holding down several initiatives.
-              <br />
-              But, when authentic reactions and genuine experience is shared, people feel stronger.
-            </p>
+            <h3>Venue</h3>
+            <br />
+            <br />
+            <br />
+            <h6>{venue.name}</h6>
+            <br />
+            <p className="lead quote">{venue.description}</p>
+            <br />
+            <Row className="justify-content-center">
+              {venue.photos &&
+                Object.keys(venue.photos).map(photoKey => (
+                  <Col sm="3" key={photoKey}>
+                    <img
+                      src={venue.photos[photoKey]}
+                      className="img-fluid rounded"
+                      alt={venue.name}
+                    />
+                  </Col>
+                ))}
+            </Row>
             <br />
             <Row className="justify-content-center">
               <Col sm="4">
-                <a href="https://goo.gl/forms/RE52Zs89F5zj4hKO2" className="btn btn-primary bnt-lg btn-block">Apply now and share your story</a>
+                <a
+                  className="btn btn-primary bnt-lg btn-block"
+                  href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Signup for the event
+                </a>
               </Col>
             </Row>
           </div>
@@ -59,7 +74,7 @@ export default class Manifest extends Component {
 // <p>
 //   <small>or <Button size="sm" color="secondary" onClick={this.toggle}>read the full manifest</Button></small>
 //   <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-//     <ModalHeader toggle={this.toggle}>PitchYourFailure Manifest</ModalHeader>
+//     <ModalHeader toggle={this.toggle}>PitchYourFailure Venue</ModalHeader>
 //     <ModalBody>
 //       <p>“Pitch your failure” is an initiative organized by Mediterranean people for Mediterranean people, focusing on social entrepreneurship stories: Failure matters and stigmatizes us. It is in our everyday life, we experience it, but very few have the courage to talk about it and overcome it.</p>
 //       <p>“Pitch your failure” is a night where 4 social entrepreneurs will have the chance to speak about an entrepreneurial failure they had overcome. Failure will be the common ground for all speakers. Not perfect stories, but true stories.</p>

@@ -1,11 +1,17 @@
 import React from 'react';
 import { Element } from 'react-scroll';
 
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+
+import cmx from '../../assets/images/cmx.png';
+import timwcap from '../../assets/images/timwcap.png';
+import ashoka from '../../assets/images/ashoka.png';
+import uidu from '../../assets/images/uidu.png';
+import romeBusinessSchool from '../../assets/images/logo-business-school.png';
 
 const imgStyle = {
-  maxWidth: '100%',
-  height: 145,
+  // maxWidth: '100%',
+  // height: 145,
 };
 
 const Supporters = ({ supporters, className }) => (
@@ -15,13 +21,10 @@ const Supporters = ({ supporters, className }) => (
       <br />
       <br />
       <br />
-      <div className="card-deck">
+      <div className="card-columns">
         {supporters.map(supporter => (
-          <div className="card card-body border-0">
-            <div
-              className="text-center mb-3 d-flex align-items-center justify-content-center"
-              style={imgStyle}
-            >
+          <div className="card card-body">
+            <div className="text-center mb-3" style={imgStyle}>
               <img
                 className={supporter.logoClassName}
                 alt={supporter.name}
