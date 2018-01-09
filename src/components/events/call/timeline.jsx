@@ -22,46 +22,6 @@ export default function Timeline({ event, className }) {
                 </div>
               </li>
             ))}
-            <li>
-              <div>
-                <time>
-                  9<sup>th</sup> June
-                </time>
-                Applications closed
-              </div>
-            </li>
-            <li>
-              <div>
-                <time>
-                  12<sup>th</sup> June
-                </time>
-                Pre-selected participants announced
-              </div>
-            </li>
-            <li>
-              <div>
-                <time>
-                  14-16<sup>th</sup> June
-                </time>
-                Interviews
-              </div>
-            </li>
-            <li>
-              <div>
-                <time>
-                  19<sup>th</sup> June
-                </time>
-                Final speakers announced
-              </div>
-            </li>
-            <li>
-              <div>
-                <time>
-                  5<sup>th</sup> October
-                </time>
-                Pitch your Failure @ TIM #Wcap Accelerator, Rome, Italy
-              </div>
-            </li>
           </ol>
         </section>
         <br />

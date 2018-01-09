@@ -15,27 +15,29 @@ const Supporters = ({ supporters, className }) => (
       <br />
       <br />
       <br />
-      <div className="card-deck">
+      <div className="row">
         {supporters.map(supporter => (
-          <div className="card card-body border-0" key={supporter.name}>
-            <div
-              className="text-center mb-3 d-flex align-items-center justify-content-center"
-              style={imgStyle}
-            >
-              <img
-                className={supporter.logoClassName}
-                alt={supporter.name}
-                src={supporter.logo}
-              />
+          <div className="col-md-4 mb-4 mb-md-0">
+            <div className="card card-body border-0" key={supporter.name}>
+              <div
+                className="text-center mb-3 d-flex align-items-center justify-content-center"
+                style={imgStyle}
+              >
+                <img
+                  className={supporter.logoClassName}
+                  alt={supporter.name}
+                  src={supporter.logo}
+                />
+              </div>
+              <p>
+                <b>{supporter.name}</b>
+                <br />
+                {supporter.bio}
+              </p>
+              <a className="card-link" href={supporter.link}>
+                {supporter.link}
+              </a>
             </div>
-            <p>
-              <b>{supporter.name}</b>
-              <br />
-              {supporter.bio}
-            </p>
-            <a className="card-link" href={supporter.link}>
-              {supporter.link}
-            </a>
           </div>
         ))}
       </div>

@@ -10,7 +10,7 @@ const Supporters = ({ supporters, className }) => (
       <br />
       <br />
       <br />
-      <div className="card-columns">
+      <div className="card-columns justify-content-center">
         {supporters.map(supporter => (
           <div className="card card-body" key={supporter.name}>
             <div className="text-center mb-3">

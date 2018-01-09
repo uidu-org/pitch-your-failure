@@ -36,6 +36,7 @@ export default class App extends Component {
       events: null,
       supporters: null,
       speakers: null,
+      team: null,
       loaded: false,
     };
   }
@@ -73,7 +74,7 @@ export default class App extends Component {
     }
 
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
           <div className="App">
             <PYFNavbar />
@@ -106,7 +107,7 @@ export default class App extends Component {
                       <Container>
                         <Row>
                           <Col sm="6">
-                            <h3>Who's for</h3>
+                            <h3>Who's it for</h3>
                             <h5>
                               Only for wannabe social entrepreneurs who{' '}
                               <b>
@@ -178,7 +179,9 @@ export default class App extends Component {
                                     <button className="btn btn-primary">
                                       {event.status === 'finished'
                                         ? 'See how it went'
-                                        : 'See more'}
+                                        : event.steps.indexOf('call') >= 0
+                                          ? 'Apply now as a speaker'
+                                          : 'See more'}
                                     </button>
                                   </div>
                                 </Link>
@@ -189,7 +192,7 @@ export default class App extends Component {
                         <br />
                       </Container>
                     </Element>
-                    <Team className="section inverse" />
+                    <Team team={this.state.team} className="section inverse" />
                     <Supporters
                       className="section"
                       supporters={

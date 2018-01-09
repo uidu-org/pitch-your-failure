@@ -12,10 +12,17 @@ import Supporters from './supporters';
 import Venue from './venue';
 import Speakers from './speakers';
 import Report from './report';
+import Team from './team';
 
 import './show.scss';
 
-export default function Event({ event, speakers, supporters, ...otherProps }) {
+export default function Event({
+  event,
+  team,
+  speakers,
+  supporters,
+  ...otherProps
+}) {
   if (!event) {
     return (
       <div className="section inverse">
@@ -157,6 +164,19 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
                 </OurLink>
               </NavItem>
             )}
+            {event.steps.indexOf('team') >= 0 && (
+              <NavItem>
+                <OurLink
+                  className="nav-link text-white"
+                  offset={-64}
+                  to="team"
+                  spy
+                  smooth
+                >
+                  Team
+                </OurLink>
+              </NavItem>
+            )}
             {event.steps.indexOf('venue') >= 0 && (
               <NavItem>
                 <OurLink
@@ -212,6 +232,12 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
             // onMarkerRightClick={_.noop}
           />
         </div>
+      )}
+      {event.steps.indexOf('team') >= 0 && (
+        <Team
+          className="section"
+          team={event.team ? event.team.map(key => team[key]) : []}
+        />
       )}
       <Supporters
         className="section"

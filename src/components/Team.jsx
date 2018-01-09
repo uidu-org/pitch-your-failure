@@ -9,135 +9,53 @@ import ahmed from '../assets/images/ahmed.jpg';
 import violetta from '../assets/images/violetta.jpg';
 import andreag from '../assets/images/andreag.jpg';
 
-const Team = ({ className }) => (
+const Team = ({ team, className }) => (
   <Element name="team" className={className}>
     <Container className="text-center">
       <h3>Organized by</h3>
       <br />
+      <p>
+        We are an intercultural team living in different countries. We dedicate
+        time and energy to create spaces for social entrepreneurs to share
+        stories of failure in the hope to inspire others to let go of their
+        fears and embark on a journey of service to people and planet.
+      </p>
       <br />
       <br />
-      <Row>
-        <Col md="3" sm="6" xs="6">
-          <img src={violetta} className="img-fluid rounded" width="50%" />
-          <br />
-          <br />
-          <p>
-            <b>Violetta Tsitsiliani</b>
-            <br />
-            Founder of TheLanguageProject.eu, R. Bosch START program Alumna &
-            cultural manager
-          </p>
-          <Nav
-            style={{
-              display: 'inline-flex',
-            }}
-          >
-            <NavItem>
-              <NavLink href="http://thelanguageproject.eu">
-                <FontAwesome name="link" />
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://gr.linkedin.com/in/violettatsitsiliani/">
-                <FontAwesome name="linkedin" />
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <br className="hidden-md-up" />
-          <br className="hidden-md-up" />
-        </Col>
-        <Col md="3" sm="6" xs="6">
-          <img src={ahmed} className="img-fluid rounded" width="50%" />
-          <br />
-          <br />
-          <p>
-            <b>Ahmed Hadhri</b>
-            <br />
-            Founder of YallaRead.com,<br />Injaz Al Arab Alumni, Hult Prize
-            Alumni & Enpact fellow
-          </p>
-          <Nav
-            style={{
-              display: 'inline-flex',
-            }}
-          >
-            <NavItem>
-              <NavLink href="http://www.yallaread.com">
-                <FontAwesome name="link" />
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://www.linkedin.com/in/ahmed-hadhri-76043a77/">
-                <FontAwesome name="linkedin" />
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <br className="hidden-md-up" />
-          <br className="hidden-md-up" />
-        </Col>
-        <Col md="3" sm="6" xs="6">
-          <img src={andreag} className="img-fluid rounded" width="50%" />
-          <br />
-          <br />
-          <p>
-            <b>Andrea Giarrizzo</b>
-            <br />
-            Director Kairos Society Italy, Social Entrepreneur, founder of
-            YouTube Downloader & StartupSuperSchool.com
-          </p>
-          <Nav
-            style={{
-              display: 'inline-flex',
-            }}
-          >
-            <NavItem>
-              <NavLink href="http://startupsuperschool.com">
-                <FontAwesome name="link" />
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://www.linkedin.com/in/andreagiarrizz/">
-                <FontAwesome name="linkedin" />
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <br className="hidden-md-up" />
-          <br className="hidden-md-up" />
-        </Col>
-        <Col md="3" sm="6" xs="6">
-          <img
-            alt="Andrea Vanini"
-            src={andrea}
-            className="img-fluid rounded"
-            width="50%"
-          />
-          <br />
-          <br />
-          <p>
-            <b>Andrea Vanini</b>
-            <br />
-            Founder of uidu.org, Changemaker and Social Entrepreneur, Councilor
-            in an Italian municipality
-          </p>
-          <Nav
-            style={{
-              display: 'inline-flex',
-            }}
-          >
-            <NavItem>
-              <NavLink href="https://uidu.org">
-                <FontAwesome name="link" />
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="www.linkedin.com/in/andreavanini">
-                <FontAwesome name="linkedin" />
-              </NavLink>
-            </NavItem>
-          </Nav>
-          <br className="hidden-md-up" />
-          <br className="hidden-md-up" />
-        </Col>
+      <Row className="justify-content-center">
+        {Object.keys(team)
+          .reverse()
+          .map(teamMemberKey => {
+            const teamMember = team[teamMemberKey];
+            return (
+              <Col md="4" sm="6" xs="6">
+                <img
+                  alt={teamMember.name}
+                  src={teamMember.avatar}
+                  className="img-fluid rounded w-50"
+                />
+                <br />
+                <br />
+                <p>
+                  <b>{teamMember.name}</b>
+                  <br />
+                  <span dangerouslySetInnerHTML={{ __html: teamMember.bio }} />
+                </p>
+                <Nav className="d-inline-flex">
+                  {teamMember.links &&
+                    Object.keys(teamMember.links).map(link => (
+                      <NavItem key={`${teamMember.name}-${link}`}>
+                        <NavLink href={teamMember.links[link]}>
+                          <FontAwesome name={link} />
+                        </NavLink>
+                      </NavItem>
+                    ))}
+                </Nav>
+                <br className="hidden-md-up" />
+                <br className="hidden-md-up" />
+              </Col>
+            );
+          })}
       </Row>
     </Container>
   </Element>
