@@ -8,12 +8,6 @@ const Team = ({ team, className }) => (
   <Element name="team" className={className}>
     <Container className="text-center">
       <h3>Organized by</h3>
-      <p>
-        We are an intercultural team living in different countries. We dedicate
-        time and energy to create spaces for social entrepreneurs to share
-        stories of failure in the hope to inspire others to let go of their
-        fears and embark on a journey of service to people and planet.{' '}
-      </p>
       <br />
       <br />
       <br />
