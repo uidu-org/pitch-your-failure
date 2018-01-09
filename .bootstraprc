@@ -96,12 +96,12 @@ styles:
 scripts:
   alert: true
   button: true
-  carousel: true
+  carousel: false
   collapse: true
   dropdown: true
-  modal: true
-  popover: true
-  scrollspy: true
-  tab: true
-  tooltip: true
+  modal: false
+  popover: false
+  scrollspy: false
+  tab: false
+  tooltip: false
   util: true

@@ -2,6 +2,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
@@ -111,6 +113,7 @@ module.exports = {
     }),
     new InterpolateHtmlPlugin(env.raw),
     new ExtractTextPlugin('styles.css'),
+    new BundleAnalyzerPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,

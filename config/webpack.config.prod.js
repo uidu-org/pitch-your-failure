@@ -48,7 +48,7 @@ module.exports = {
   bail: true,
   // We generate sourcemaps in production. This is slow but gives good results.
   // You can exclude the *.map files from the build during deployment.
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   // In production, we only want to load the polyfills and the app code.
   entry: ['bootstrap-loader', paths.appIndexJs],
   output: {
@@ -60,13 +60,15 @@ module.exports = {
     filename: 'static/js/[name].[chunkhash:8].js',
     chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
-    publicPath: publicPath,
+    publicPath,
   },
   resolve: {
     modules: [paths.appSrc, 'node_modules'],
     extensions: ['.js', '.json', '.jsx'],
     alias: {
       'react-native': 'react-native-web',
+      react: 'preact-compat',
+      'react-dom': 'preact-compat',
     },
   },
 
@@ -141,15 +143,15 @@ module.exports = {
       Popper: 'popper.js',
       Alert: 'exports-loader?Alert!bootstrap/js/dist/alert',
       Button: 'exports-loader?Button!bootstrap/js/dist/button',
-      Carousel: 'exports-loader?Carousel!bootstrap/js/dist/carousel',
+      // Carousel: 'exports-loader?Carousel!bootstrap/js/dist/carousel',
       Collapse: 'exports-loader?Collapse!bootstrap/js/dist/collapse',
       Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
-      Modal: 'exports-loader?Modal!bootstrap/js/dist/modal',
-      Popover: 'exports-loader?Popover!bootstrap/js/dist/popover',
-      Scrollspy: 'exports-loader?Scrollspy!bootstrap/js/dist/scrollspy',
-      Tab: 'exports-loader?Tab!bootstrap/js/dist/tab',
-      Tooltip: 'exports-loader?Tooltip!bootstrap/js/dist/tooltip',
-      Util: 'exports-loader?Util!bootstrap/js/dist/util',
+      // Modal: 'exports-loader?Modal!bootstrap/js/dist/modal',
+      // Popover: 'exports-loader?Popover!bootstrap/js/dist/popover',
+      // Scrollspy: 'exports-loader?Scrollspy!bootstrap/js/dist/scrollspy',
+      // Tab: 'exports-loader?Tab!bootstrap/js/dist/tab',
+      // Tooltip: 'exports-loader?Tooltip!bootstrap/js/dist/tooltip',
+      // Util: 'exports-loader?Util!bootstrap/js/dist/util',
     }),
     // Makes some environment variables available in index.html.
     // The public URL is available as %PUBLIC_URL% in index.html, e.g.:
@@ -186,16 +188,17 @@ module.exports = {
     // Minify the code.
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        screw_ie8: true, // React doesn't support IE8
-        warnings: false,
-      },
-      mangle: {
+        warnings: false, // Suppress uglification warnings
+        pure_getters: true,
+        unsafe: true,
+        unsafe_comps: true,
         screw_ie8: true,
       },
       output: {
         comments: false,
-        screw_ie8: true,
       },
+      sourceMap: true,
+      mangle: true,
     }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin(cssFilename),
