@@ -19,7 +19,7 @@ export default class Venue extends Component {
   }
 
   render() {
-    const { event: { venue } } = this.props;
+    const { event, event: { venue } } = this.props;
     return (
       <Element
         name="venue"
@@ -51,18 +51,20 @@ export default class Venue extends Component {
                 ))}
             </Row>
             <br />
-            <Row className="justify-content-center">
-              <Col sm="4">
-                <a
-                  className="btn btn-primary bnt-lg btn-block"
-                  href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Signup for the event
-                </a>
-              </Col>
-            </Row>
+            {event.ticket && (
+              <Row className="justify-content-center">
+                <Col sm="4">
+                  <a
+                    className="btn btn-primary bnt-lg btn-block"
+                    href={event.ticket}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Signup for the event
+                  </a>
+                </Col>
+              </Row>
+            )}
           </div>
         </Container>
       </Element>

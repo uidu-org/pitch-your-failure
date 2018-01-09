@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
-import { Element, ScrollLink } from 'react-scroll';
+import { Element } from 'react-scroll';
 
-import { Button, Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 import venue from '../../assets/images/003-coliseum.png';
 import entrepreneurs from '../../assets/images/002-startup.png';
 import stage from '../../assets/images/001-story.png';
-import rome from '../../assets/images/skyline.png';
 
-import Supporters from '../Supporters';
 import Manifest from './call/manifest';
 import Timeline from './call/timeline';
-
-const OurLink = ScrollLink(props => (
-  <a href="#" {...props}>
-    {props.children}
-  </a>
-));
 
 export default class Call extends Component {
   render() {
@@ -75,7 +67,7 @@ export default class Call extends Component {
               <Col sm="4" className="text-center">
                 <img
                   alt="Venue"
-                  src={venue}
+                  src={event.call.city.icon}
                   width="40%"
                   className="img-fluid"
                 />

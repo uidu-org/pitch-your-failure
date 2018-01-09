@@ -31,7 +31,7 @@ export default function Speakers({ speakers, className }) {
               <Nav className="d-inline-flex">
                 {speaker.links &&
                   Object.keys(speaker.links).map(link => (
-                    <NavItem>
+                    <NavItem key={`${speaker.fullName}-${link}`}>
                       <NavLink href={speaker.links[link]}>
                         <FontAwesome name={link} />
                       </NavLink>

@@ -27,7 +27,7 @@ export default class Manifest extends Component {
             <Row className="justify-content-center">
               <Col sm="4">
                 <a
-                  href="https://goo.gl/forms/RE52Zs89F5zj4hKO2"
+                  href={call.link}
                   className="btn btn-primary bnt-lg btn-block"
                 >
                   Apply now and share your story

@@ -40,6 +40,7 @@ export default class EventReport extends Component {
             {photos.map((obj, i) => (
               <a
                 href={obj.src}
+                key={obj.src}
                 // className={css(classes.thumbnail, classes[obj.orientation])}
                 // key={i}
                 className="card"

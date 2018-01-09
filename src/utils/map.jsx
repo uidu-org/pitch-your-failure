@@ -1,28 +1,25 @@
 import React from 'react';
-import {
-  withGoogleMap,
-  GoogleMap,
-  Marker,
-  OverlayView,
-} from 'react-google-maps';
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
-export const GettingStartedGoogleMap = withGoogleMap(props => (
-  <GoogleMap
-    ref={props.onMapLoad}
-    defaultZoom={12}
-    defaultCenter={{ lat: 41.882076, lng: 12.467271 }}
-    options={{
-      scrollwheel: false,
-    }}
-    onClick={props.onMapClick}
-  >
-    <Marker
-      position={{
-        lat: 41.882076,
-        lng: 12.467271,
+export const GettingStartedGoogleMap = withGoogleMap(
+  ({ onMapLoad, onMapClick, lat, lng }) => (
+    <GoogleMap
+      ref={onMapLoad}
+      defaultZoom={12}
+      defaultCenter={{ lat, lng }}
+      options={{
+        scrollwheel: false,
       }}
-      key="Taiwan"
-      defaultAnimation="2"
-    />
-  </GoogleMap>
-));
+      onClick={onMapClick}
+    >
+      <Marker
+        position={{
+          lat,
+          lng,
+        }}
+        key="Taiwan"
+        defaultAnimation="2"
+      />
+    </GoogleMap>
+  ),
+);

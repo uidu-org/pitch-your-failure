@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import { Element } from 'react-scroll';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import {
-  Container,
-  Row,
-  Col,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 import FontAwesome from 'react-fontawesome';
 import firebase from 'firebase';
@@ -24,10 +16,11 @@ import Event from './events/show';
 
 import logo from '../assets/images/logo.png';
 
+import { OurLink } from '../utils/link';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.toggleModal = this.toggleModal.bind(this);
     // Initialize Firebase
     const config = {
       apiKey: 'AIzaSyCHOihMbAZKbEqzfjzh-s8y72aHKQDPeM8',
@@ -43,7 +36,6 @@ export default class App extends Component {
       events: null,
       supporters: null,
       speakers: null,
-      isModalOpen: false,
       loaded: false,
     };
   }
@@ -58,13 +50,6 @@ export default class App extends Component {
           loaded: true,
         });
       });
-  }
-
-  toggleModal(e) {
-    e.preventDefault();
-    this.setState({
-      isModalOpen: !this.state.isModalOpen,
-    });
   }
 
   render() {
@@ -110,14 +95,14 @@ export default class App extends Component {
                         <i>failed</i> social ventures
                       </h2>
                       <p className="lead mb-0">
-                        <a
+                        <OurLink
                           className="btn btn-primary btn-lg"
-                          href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
-                          rel="noopener noreferrer"
-                          target="_blank"
+                          offset={-64}
+                          to="events"
+                          smooth
                         >
-                          Signup for the event
-                        </a>
+                          Browse next events
+                        </OurLink>
                       </p>
                     </Container>
                   </div>
@@ -176,7 +161,11 @@ export default class App extends Component {
                           Object.keys(this.state.events).map(key => {
                             const event = this.state.events[key];
                             return (
-                              <a className="card" href={`events/${key}`}>
+                              <a
+                                className="card"
+                                key={key}
+                                href={`events/${key}`}
+                              >
                                 <img
                                   className="card-img-top"
                                   src={event.cover}
@@ -190,7 +179,9 @@ export default class App extends Component {
                                     {event.venue.name}
                                   </p>
                                   <button className="btn btn-primary">
-                                    Go somewhere
+                                    {event.status === 'finished'
+                                      ? 'See how it went'
+                                      : 'See more'}
                                   </button>
                                 </div>
                               </a>
@@ -239,55 +230,6 @@ export default class App extends Component {
               </p>
             </Container>
           </div>
-          <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-            <ModalHeader toggle={this.toggleModal}>
-              PitchYourFailure Manifest
-            </ModalHeader>
-            <ModalBody>
-              <p>
-                “Pitch your failure” is an initiative organized by Mediterranean
-                people for Mediterranean people, focusing on social
-                entrepreneurship stories: Failure matters and stigmatizes us. It
-                is in our everyday life, we experience it, but very few have the
-                courage to talk about it and overcome it.
-              </p>
-              <p>
-                “Pitch your failure” is a night where 4 social entrepreneurs
-                will have the chance to speak about an entrepreneurial failure
-                they had overcome. Failure will be the common ground for all
-                speakers. Not perfect stories, but true stories.
-              </p>
-              <p>
-                For social entrepreneurs, ventures are sometimes connected
-                profoundly with their everyday and their lives in general. Their
-                initiatives become their life goals. Thus, our goal is not only
-                to cheer resolutions, but to hear and understand how
-                difficulties occur. How do we accept failure itself and how do
-                we manage to turn a negative outcome into an opportunity. We
-                learn from real stories how to move forward.
-              </p>
-              <p>
-                “Pitch your failure” will encourage young and older people to
-                bring change in their communities, without having the fear of
-                failing. The audience will have the opportunity to listen and
-                interact with social entrepreneurs living in the same region.
-                Being a social entrepreneur is a challenge of its own, so the
-                ‘fear’ of failure is always a threat, holding down several
-                initiatives. But, when authentic reactions and genuine
-                experience is shared, people feel stronger, are encouraged to
-                achieve their goals and gain more strength to make a change on
-                their own.
-              </p>
-            </ModalBody>
-            <ModalFooter>
-              <a
-                href="https://goo.gl/forms/RE52Zs89F5zj4hKO2"
-                className="btn btn-primary bnt-lg btn-block"
-              >
-                Apply now
-              </a>
-            </ModalFooter>
-          </Modal>
         </div>
       </Router>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollLink } from 'react-scroll';
+import { ScrollLink, scroller } from 'react-scroll';
 
 import {
   Container,
@@ -10,13 +10,9 @@ import {
   NavItem,
 } from 'reactstrap';
 
-import logo from '../../assets/images/logo.png';
+import { OurLink } from '../../utils/link';
 
-const OurLink = ScrollLink(props => (
-  <a href="#" {...props}>
-    {props.children}
-  </a>
-));
+import logo from '../../assets/images/logo.png';
 
 export default class PYFNavbar extends Component {
   constructor(props) {
@@ -24,6 +20,17 @@ export default class PYFNavbar extends Component {
     this.state = {
       isOpen: false,
     };
+  }
+
+  componentDidMount() {
+    if (window.location.hash) {
+      console.log(window.location.hash.substring(1));
+      scroller.scrollTo(window.location.hash.substring(1), {
+        duration: 1500,
+        delay: 100,
+        smooth: true,
+      });
+    }
   }
 
   toggle = () => {
@@ -48,29 +55,50 @@ export default class PYFNavbar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <OurLink className="nav-link" offset={-64} to="events" smooth>
-                  Events
-                </OurLink>
+                {window.location.pathname === '/' ? (
+                  <OurLink className="nav-link" offset={-64} to="events" smooth>
+                    Events
+                  </OurLink>
+                ) : (
+                  <a href="/#events" className="nav-link">
+                    Events
+                  </a>
+                )}
               </NavItem>
               <NavItem>
-                <OurLink className="nav-link" offset={-64} to="why" smooth>
-                  Manifest
-                </OurLink>
+                {window.location.pathname === '/' ? (
+                  <OurLink className="nav-link" offset={-64} to="why" smooth>
+                    Manifest
+                  </OurLink>
+                ) : (
+                  <a href="/#manifest" className="nav-link">
+                    Manifest
+                  </a>
+                )}
               </NavItem>
               <NavItem>
-                <OurLink
-                  className="nav-link"
-                  offset={-64}
-                  to="supporters"
-                  smooth
-                >
-                  Supporters
-                </OurLink>
+                {window.location.pathname === '/' ? (
+                  <OurLink
+                    className="nav-link"
+                    offset={-64}
+                    to="supporters"
+                    smooth
+                  >
+                    Supporters
+                  </OurLink>
+                ) : (
+                  <a href="/#supporters" className="nav-link">
+                    Supporters
+                  </a>
+                )}
               </NavItem>
             </Nav>
-            <button className="btn btn-navbar btn-primary ml-lg-3">
+            <a
+              href="mailto:pitchyourfailure@gmail.com"
+              className="btn btn-navbar btn-outline btn-outline-primary ml-lg-3"
+            >
               Host an event
-            </button>
+            </a>
           </Collapse>
         </Container>
       </nav>

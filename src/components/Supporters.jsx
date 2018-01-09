@@ -17,7 +17,7 @@ const Supporters = ({ supporters, className }) => (
       <br />
       <div className="card-deck">
         {supporters.map(supporter => (
-          <div className="card card-body border-0">
+          <div className="card card-body border-0" key={supporter.name}>
             <div
               className="text-center mb-3 d-flex align-items-center justify-content-center"
               style={imgStyle}

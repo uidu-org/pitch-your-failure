@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Element, ScrollLink } from 'react-scroll';
-import { Container, Row, Col, Nav, NavItem } from 'reactstrap';
+import React from 'react';
+import { Element } from 'react-scroll';
+import { Container, Nav, NavItem } from 'reactstrap';
 
 import Loader from '@uidu/loader';
 
@@ -12,6 +12,8 @@ import Supporters from './supporters';
 import Venue from './venue';
 import Speakers from './speakers';
 import Report from './report';
+
+import './show.scss';
 
 export default function Event({ event, speakers, supporters, ...otherProps }) {
   if (!event) {
@@ -34,7 +36,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
             {event.status === 'finished' && (
               <div className="alert alert-warning">
                 Event was great! Don't miss the{' '}
-                <a href="/events" className="alert-link">
+                <a href="/#events" className="alert-link">
                   next ones
                 </a>!
               </div>
@@ -77,7 +79,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
               ) : (
                 <a
                   className="btn btn-primary btn-lg"
-                  href="https://www.eventbrite.com/e/pitch-your-failure-night-tickets-34605388649"
+                  href={event.ticket}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -97,6 +99,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
                 offset={-64}
                 to="event-root"
                 style={{ color: '#b4bec7' }}
+                spy
                 smooth
               >
                 {event.name}@{event.venue.name}
@@ -108,6 +111,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
                   className="nav-link text-white"
                   offset={-64}
                   to="application"
+                  spy
                   smooth
                 >
                   Apply now
@@ -120,6 +124,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
                   className="nav-link text-white"
                   offset={-64}
                   to="timeline"
+                  spy
                   smooth
                 >
                   Application timeline
@@ -132,6 +137,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
                   className="nav-link text-white"
                   offset={-64}
                   to="photos"
+                  spy
                   smooth
                 >
                   Photos
@@ -144,6 +150,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
                   className="nav-link text-white"
                   offset={-64}
                   to="speakers"
+                  spy
                   smooth
                 >
                   Speakers
@@ -156,6 +163,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
                   className="nav-link text-white"
                   offset={-64}
                   to="venue"
+                  spy
                   smooth
                 >
                   Venue
@@ -167,6 +175,7 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
                 className="nav-link text-white"
                 offset={-64}
                 to="supporters"
+                spy
                 smooth
               >
                 Supporters
@@ -195,6 +204,8 @@ export default function Event({ event, speakers, supporters, ...otherProps }) {
           <GettingStartedGoogleMap
             containerElement={<div style={{ height: 300 }} />}
             mapElement={<div style={{ height: 300 }} />}
+            lat={event.venue.lat}
+            lng={event.venue.lng}
             // onMapLoad={_.noop}
             // onMapClick={_.noop}
             // markers={markers}

@@ -23,7 +23,7 @@ const Supporters = ({ supporters, className }) => (
       <br />
       <div className="card-columns">
         {supporters.map(supporter => (
-          <div className="card card-body">
+          <div className="card card-body" key={supporter.name}>
             <div className="text-center mb-3" style={imgStyle}>
               <img
                 className={supporter.logoClassName}
