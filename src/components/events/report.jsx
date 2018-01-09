@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Lightbox from 'react-images';
 import { Element } from 'react-scroll';
-import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 export default class EventReport extends Component {
   constructor(props) {

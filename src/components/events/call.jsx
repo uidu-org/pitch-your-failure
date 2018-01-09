@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Element } from 'react-scroll';
 
 import { Container, Row, Col } from 'reactstrap';
-
-import venue from '../../assets/images/003-coliseum.png';
 import entrepreneurs from '../../assets/images/002-startup.png';
 import stage from '../../assets/images/001-story.png';
 
@@ -25,7 +23,7 @@ export default class Call extends Component {
       >
         <Element name="application" className="section">
           <Container>
-            <h3 className="display-6 text-center">{"We're looking for"}</h3>
+            <h3 className="display-6 text-center">We're looking for</h3>
             <h3 className="display-3 text-center">
               <s>Perfect stories</s>
               <br />True stories

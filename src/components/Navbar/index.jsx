@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollLink, scroller } from 'react-scroll';
+import { scroller } from 'react-scroll';
 
 import {
   Container,
