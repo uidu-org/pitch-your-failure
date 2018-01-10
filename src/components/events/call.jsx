@@ -36,8 +36,7 @@ export default class Call extends Component {
                 <img
                   alt="Entrepreneurs"
                   src={entrepreneurs}
-                  width="40%"
-                  className="img-fluid"
+                  className="img-fluid w-50"
                 />
                 <br />
                 <br />
@@ -51,8 +50,7 @@ export default class Call extends Component {
                 <img
                   alt="Stage"
                   src={stage}
-                  width="40%"
-                  className="img-fluid"
+                  className="img-fluid w-50"
                 />
                 <br />
                 <br />
@@ -66,9 +64,8 @@ export default class Call extends Component {
                 <img
                   alt="Venue"
                   src={event.call.city.icon}
-                  width="40%"
                   className="img-fluid"
-                />
+                / w-50>
                 <br />
                 <br />
                 <h5>{event.call.city.name}</h5>
