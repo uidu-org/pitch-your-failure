@@ -47,11 +47,7 @@ export default class Call extends Component {
                 </p>
               </Col>
               <Col sm="4" className="text-center">
-                <img
-                  alt="Stage"
-                  src={stage}
-                  className="img-fluid w-50"
-                />
+                <img alt="Stage" src={stage} className="img-fluid w-50" />
                 <br />
                 <br />
                 <h5>Willing to share</h5>
@@ -64,8 +60,8 @@ export default class Call extends Component {
                 <img
                   alt="Venue"
                   src={event.call.city.icon}
-                  className="img-fluid"
-                / w-50>
+                  className="img-fluid w-50"
+                />
                 <br />
                 <br />
                 <h5>{event.call.city.name}</h5>
