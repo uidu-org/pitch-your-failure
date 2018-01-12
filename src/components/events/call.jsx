@@ -68,6 +68,12 @@ export default class Call extends Component {
                 <p>{event.call.city.description}</p>
               </Col>
             </Row>
+            <br />
+            <br />
+            <p className="lead text-center">
+              * Thanks to our supporters, we cover expenses of the selected
+              speakers to come to {event.venue.city} and share their stories
+            </p>
           </Container>
         </Element>
         <Manifest call={event.call} />
