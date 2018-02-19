@@ -18,8 +18,7 @@ export default function Speakers({ speakers, className }) {
               <img
                 alt={speaker.fullName}
                 src={speaker.avatar}
-                className="img-fluid rounded mb-4"
-                width="50%"
+                className="img-fluid rounded mb-4 w-50"
               />
               <p>
                 <b>{speaker.fullName}</b>
