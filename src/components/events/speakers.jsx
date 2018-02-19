@@ -15,11 +15,15 @@ export default function Speakers({ speakers, className }) {
         <Row>
           {speakers.map(speaker => (
             <Col sm="6" xs="6" key={speaker.fullName}>
-              <img
-                alt={speaker.fullName}
-                src={speaker.avatar}
-                className="img-fluid rounded mb-4 w-100 w-md-50"
-              />
+              <Row>
+                <Col sm="12" md="6">
+                  <img
+                    alt={speaker.fullName}
+                    src={speaker.avatar}
+                    className="img-fluid rounded mb-4 w-100"
+                  />
+                </Col>
+              </Row>
               <p>
                 <b>{speaker.fullName}</b>
               </p>
