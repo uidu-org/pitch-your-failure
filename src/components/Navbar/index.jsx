@@ -106,8 +106,10 @@ export default class PYFNavbar extends Component {
               </NavItem>
             </Nav>
             <a
-              href="mailto:pitchyourfailure@gmail.com"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfLsHieBOG_aNQJPI7pY8-1N3cqjhmfzriiD0zdvN-gkZeshg/viewform"
               className="btn btn-navbar btn-outline btn-outline-primary ml-lg-3"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Host an event
             </a>
