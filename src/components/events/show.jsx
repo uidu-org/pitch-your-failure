@@ -164,19 +164,6 @@ export default function Event({
                 </OurLink>
               </NavItem>
             )}
-            {event.steps.indexOf('team') >= 0 && (
-              <NavItem>
-                <OurLink
-                  className="nav-link text-white"
-                  offset={-64}
-                  to="team"
-                  spy
-                  smooth
-                >
-                  Team
-                </OurLink>
-              </NavItem>
-            )}
             {event.steps.indexOf('venue') >= 0 && (
               <NavItem>
                 <OurLink
@@ -187,6 +174,19 @@ export default function Event({
                   smooth
                 >
                   Venue
+                </OurLink>
+              </NavItem>
+            )}
+            {event.steps.indexOf('team') >= 0 && (
+              <NavItem>
+                <OurLink
+                  className="nav-link text-white"
+                  offset={-64}
+                  to="team"
+                  spy
+                  smooth
+                >
+                  Team
                 </OurLink>
               </NavItem>
             )}

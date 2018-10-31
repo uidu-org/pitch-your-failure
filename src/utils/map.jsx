@@ -5,7 +5,7 @@ export const GettingStartedGoogleMap = withGoogleMap(
   ({ onMapLoad, onMapClick, lat, lng }) => (
     <GoogleMap
       ref={onMapLoad}
-      defaultZoom={12}
+      defaultZoom={14}
       defaultCenter={{ lat, lng }}
       options={{
         scrollwheel: false,
