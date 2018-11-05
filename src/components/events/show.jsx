@@ -94,6 +94,16 @@ export default function Event({
                 </a>
               )}
             </p>
+            {event.coverCredits && (
+              <a
+                href={event.coverCreditsUrl}
+                target="_blank"
+                className="small position-absolute text-white"
+                style={{ bottom: '1rem', right: '1rem' }}
+              >
+                Cover credits: {event.coverCredits}
+              </a>
+            )}
           </Container>
         </Element>
       </div>

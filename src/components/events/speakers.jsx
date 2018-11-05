@@ -27,9 +27,10 @@ export default function Speakers({ speakers, className }) {
               <p>
                 <b>{speaker.fullName}</b>
               </p>
-              <blockquote className="blockquote mb-3">
-                {speaker.quote}
-              </blockquote>
+              <blockquote
+                className="blockquote mb-3"
+                dangerouslySetInnerHTML={{ __html: speaker.quote }}
+              />
               <p>{speaker.bio}</p>
               <Nav className="d-inline-flex">
                 {speaker.links &&
