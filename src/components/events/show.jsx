@@ -157,7 +157,7 @@ export default function Event({
                   spy
                   smooth
                 >
-                  Photos
+                  {event.blog ? 'Story' : 'Photos'}
                 </OurLink>
               </NavItem>
             )}
@@ -215,7 +215,7 @@ export default function Event({
         </Container>
       </div>
       {event.steps.indexOf('photos') >= 0 && (
-        <Report className="section" photos={event.photos} />
+        <Report className="section" blog={event.blog} photos={event.photos} />
       )}
       {event.steps.indexOf('call') >= 0 && <Call event={event} />}
       {event.steps.indexOf('speakers') >= 0 && (

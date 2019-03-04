@@ -28,12 +28,23 @@ export default class EventReport extends Component {
   };
 
   render() {
-    const { photos, className } = this.props;
+    const { photos, className, blog } = this.props;
     return (
       <Element name="photos" className={className}>
         <Container>
-          <h3 className="text-center">Photos</h3>
-          <br />
+          <h3 className="text-center">{blog ? blog.title : 'Photos'}</h3>
+          {blog && (
+            <div className="row justify-content-center">
+              <div className="col-sm-8">
+                <p className="lead text-center">
+                  {blog.excerpt}{' '}
+                  <a href={blog.link} target="_blank">
+                    [Read the full blog post]
+                  </a>
+                </p>
+              </div>
+            </div>
+          )}
           <br />
           <br />
           <div className="card-columns">
