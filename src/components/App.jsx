@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import moment from 'moment';
 import { Element } from 'react-scroll';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
@@ -73,6 +74,19 @@ export default class App extends Component {
       );
     }
 
+    {
+      /* .sort((a, b) => {
+      const aDate = moment(
+        this.state.events[a].date,
+        'ddd MMMM DD, YYYY',
+      ).toDate();
+      const bDate = moment(
+        this.state.events[b].date,
+        'ddd MMMM DD, YYYY',
+      ).toDate();
+      return bDate - aDate;
+    }) */
+    }
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
