@@ -74,19 +74,6 @@ export default class App extends Component {
       );
     }
 
-    {
-      /* .sort((a, b) => {
-      const aDate = moment(
-        this.state.events[a].date,
-        'ddd MMMM DD, YYYY',
-      ).toDate();
-      const bDate = moment(
-        this.state.events[b].date,
-        'ddd MMMM DD, YYYY',
-      ).toDate();
-      return bDate - aDate;
-    }) */
-    }
     return (
       <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
@@ -170,37 +157,51 @@ export default class App extends Component {
                         <br />
                         <div className="card-deck">
                           {this.state.events &&
-                            Object.keys(this.state.events).map(key => {
-                              const event = this.state.events[key];
-                              return (
-                                <Link
-                                  className="card"
-                                  key={key}
-                                  to={`/events/${key}`}
-                                >
-                                  <img
-                                    className="card-img-top"
-                                    src={event.cover}
-                                    alt={event.name}
-                                  />
-                                  <div className="card-body">
-                                    <h5 className="card-title">{event.name}</h5>
-                                    <p className="card-text">
-                                      {event.date} - {event.time}
-                                      <br />
-                                      {event.venue.name}
-                                    </p>
-                                    <button className="btn btn-primary">
-                                      {event.status === 'finished'
-                                        ? 'See how it went'
-                                        : event.steps.indexOf('call') >= 0
-                                          ? 'Apply now as a speaker'
-                                          : 'See more'}
-                                    </button>
-                                  </div>
-                                </Link>
-                              );
-                            })}
+                            Object.keys(this.state.events)
+                              .sort((a, b) => {
+                                const aDate = moment(
+                                  this.state.events[a].date,
+                                  'ddd MMMM DD, YYYY',
+                                ).toDate();
+                                const bDate = moment(
+                                  this.state.events[b].date,
+                                  'ddd MMMM DD, YYYY',
+                                ).toDate();
+                                return bDate - aDate;
+                              })
+                              .map(key => {
+                                const event = this.state.events[key];
+                                return (
+                                  <Link
+                                    className="card"
+                                    key={key}
+                                    to={`/events/${key}`}
+                                  >
+                                    <img
+                                      className="card-img-top"
+                                      src={event.cover}
+                                      alt={event.name}
+                                    />
+                                    <div className="card-body">
+                                      <h5 className="card-title">
+                                        {event.name}
+                                      </h5>
+                                      <p className="card-text">
+                                        {event.date} - {event.time}
+                                        <br />
+                                        {event.venue.name}
+                                      </p>
+                                      <button className="btn btn-primary">
+                                        {event.status === 'finished'
+                                          ? 'See how it went'
+                                          : event.steps.indexOf('call') >= 0
+                                            ? 'Apply now as a speaker'
+                                            : 'See more'}
+                                      </button>
+                                    </div>
+                                  </Link>
+                                );
+                              })}
                         </div>
                         <br />
                         <br />
